@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Content = () => {
 
@@ -61,63 +61,176 @@ const Content = () => {
                     {
                         topicName: "Keywords",
                         topicPoints: [
-                            "1. abstract - Defines an abstract class that cannot be instantiated.",
-                            "2. assert - Used for debugging purposes to test assumptions in code.",
-                            "3. boolean - A data type that can hold only true or false values.",
-                            "4. break - Exits from a loop or switch statement immediately.",
-                            "5. byte - A data type that holds 8-bit integer values.",
-                            "6. case - Defines a case in a switch statement.",
-                            "7. catch - Handles exceptions thrown in a try block.",
-                            "8. char - A data type that holds a single 16-bit Unicode character.",
-                            "9. class - Defines a new class in Java.",
-                            "10. continue - Skips the current iteration of a loop and moves to the next iteration.",
-                            "11. default - Specifies the default block of code in a switch statement.",
-                            "12. do - Starts a do-while loop, which executes at least once.",
-                            "13. double - A data type for storing 64-bit floating-point numbers.",
-                            "14. else - Defines an alternative branch in an if statement.",
-                            "15. enum - Defines a fixed set of constants.",
-                            "16. extends - Indicates that a class is inheriting from another class.",
-                            "17. final - Defines constants, prevents method overriding, and class inheritance.",
-                            "18. finally - Defines a block that always executes after a try-catch block.",
-                            "19. float - A data type for storing 32-bit floating-point numbers.",
-                            "20. for - Starts a for loop.",
-                            "21. if - Defines a conditional statement.",
-                            "22. implements - Indicates that a class implements an interface.",
-                            "23. import - Imports a package or a class.",
-                            "24. instanceof - Checks if an object is an instance of a specific class or subclass.",
-                            "25. int - A data type for storing 32-bit integer values.",
-                            "26. interface - Defines an interface that classes can implement.",
-                            "27. long - A data type for storing 64-bit integer values.",
-                            "28. native - Indicates that a method is implemented in native code (e.g., C/C++).",
-                            "29. new - Creates a new instance of a class.",
-                            "30. null - Represents a null reference.",
-                            "31. package - Defines a package for organizing classes.",
-                            "32. private - Specifies private access control.",
-                            "33. protected - Specifies protected access control.",
-                            "34. public - Specifies public access control.",
-                            "35. return - Returns a value from a method.",
-                            "36. short - A data type for storing 16-bit integer values.",
-                            "37. static - Defines a static method or variable.",
-                            "38. strictfp - Ensures consistent floating-point calculations across platforms.",
-                            "39. super - Refers to the parent class.",
-                            "40. switch - Starts a switch statement.",
-                            "41. synchronized - Ensures thread safety by synchronizing a method or block.",
-                            "42. this - Refers to the current instance of the class.",
-                            "43. throw - Throws an exception.",
-                            "44. throws - Declares exceptions that a method may throw.",
-                            "45. transient - Prevents serialization of a variable.",
-                            "46. try - Starts a try block for exception handling.",
-                            "47. void - Specifies that a method does not return a value.",
-                            "48. volatile - Indicates that a variable's value may change unexpectedly due to multi-threading.",
-                            "49. while - Starts a while loop.",
+                            "abstract - Defines an abstract class that cannot be instantiated.",
+                            "assert - Used for debugging purposes to test assumptions in code.",
+                            "boolean - A data type that can hold only true or false values.",
+                            "break - Exits from a loop or switch statement immediately.",
+                            "byte - A data type that holds 8-bit integer values.",
+                            "case - Defines a case in a switch statement.",
+                            "catch - Handles exceptions thrown in a try block.",
+                            "char - A data type that holds a single 16-bit Unicode character.",
+                            "class - Defines a new class in Java.",
+                            "continue - Skips the current iteration of a loop and moves to the next iteration.",
+                            "default - Specifies the default block of code in a switch statement.",
+                            "do - Starts a do-while loop, which executes at least once.",
+                            "double - A data type for storing 64-bit floating-point numbers.",
+                            "else - Defines an alternative branch in an if statement.",
+                            "enum - Defines a fixed set of constants.",
+                            "extends - Indicates that a class is inheriting from another class.",
+                            "final - Defines constants, prevents method overriding, and class inheritance.",
+                            "finally - Defines a block that always executes after a try-catch block.",
+                            "float - A data type for storing 32-bit floating-point numbers.",
+                            "for - Starts a for loop.",
+                            "if - Defines a conditional statement.",
+                            "implements - Indicates that a class implements an interface.",
+                            "import - Imports a package or a class.",
+                            "instanceof - Checks if an object is an instance of a specific class or subclass.",
+                            "int - A data type for storing 32-bit integer values.",
+                            "interface - Defines an interface that classes can implement.",
+                            "long - A data type for storing 64-bit integer values.",
+                            "native - Indicates that a method is implemented in native code (e.g., C/C++).",
+                            "new - Creates a new instance of a class.",
+                            "null - Represents a null reference.",
+                            "package - Defines a package for organizing classes.",
+                            "private - Specifies private access control.",
+                            "protected - Specifies protected access control.",
+                            "public - Specifies public access control.",
+                            "return - Returns a value from a method.",
+                            "short - A data type for storing 16-bit integer values.",
+                            "static - Defines a static method or variable.",
+                            "strictfp - Ensures consistent floating-point calculations across platforms.",
+                            "super - Refers to the parent class.",
+                            "switch - Starts a switch statement.",
+                            "synchronized - Ensures thread safety by synchronizing a method or block.",
+                            "this - Refers to the current instance of the class.",
+                            "throw - Throws an exception.",
+                            "throws - Declares exceptions that a method may throw.",
+                            "transient - Prevents serialization of a variable.",
+                            "try - Starts a try block for exception handling.",
+                            "void - Specifies that a method does not return a value.",
+                            "volatile - Indicates that a variable's value may change unexpectedly due to multi-threading.",
+                            "while - Starts a while loop.",
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Operator",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Operators",
+                        topicPoints: [
+                            "Arithmetic Operators - Used for basic math operations (+, -, *, /, %)",
+                            "Relational Operators	- Used to compare values (==, !=, >, <, >=, <=)",
+                            "Logical Operators	- Used for boolean logic (&&, ||)",
+                            "Bitwise Operators	- Used for bit-level operations (&, |)",
+                            "Assignment Operators	- Used to assign values (=, +=, -=, *=, /=, %=)",
+                            "Unary Operators	- Used for single operand operations (+, -, ++, --, ~, !)",
+                            "Ternary Operator	- Used as a shortcut for if-else (condition ? expr1 : expr2)",
+                            "instanceof Operator	- Checks object type (obj instanceof Class)"
+                        ]
+                    }, {
+                        topicName: "Relational(Comparision) Operators",
+                        topicPoints: [
+                            "10 == 10 --> if both are equal it's true, otherwise false",
+                            "10 != 10 --> if both are not equal it's true, otherwise false",
+                            "10 > 10 --> if left value is greater than right value it's true, otherwise false",
+                            "10 < 10 --> if left value is lesser than right value it's true, otherwise false",
+                            "10 >= 10 --> if left value is greater than right value or left value and right are equal it's true, otherwise false",
+                            "10 <= 10 --> if left value is lesser than right value or left value and right are equal it's true, otherwise false",
+                        ]
+                    }, {
+                        topicName: "Bitwise Operators",
+                        topicPoints: [
+                            "& Bitwise AND - it will check all the condition, even if the first condition is false.",
+                            "| Bitwise OR - it will check all the condition, even if the first condition is true.",
+                            "10 != 0 & 10 == 10 - & Bitwise AND - it will return true only all the condition's are satisfied, otherwise false.",
+                            "10 != 0 | 10 == 10 - | Bitwise OR - it will return true if any one of the condition's is satisfied, otherwise false."
+                        ]
+                    }, {
+                        topicName: "Logical Operators",
+                        topicPoints: [
+                            "&& Logical AND - it won't check all the condition, if the first condition is false.",
+                            "|| Logical OR - it won't check all the condition, if the first condition is true.",
+                            "10 != 0 && 10 == 10 - && Logical AND - it will return true only all the condition's are satisfied, otherwise false.",
+                            "10 != 0 || 10 == 10 - || Logical OR - it will return true if any one of the condition's is satisfied, otherwise false."
+                        ]
+                    }, {
+                        topicName: "Unary Operators",
+                        topicPoints: [
+                            "++ --> Increment Operator --> 1. Pre-Increment, 2. Post Increment",
+                            "-- --> Decrement Operator --> 1. Pre-Decrement, 2. Post Decrement",
+                            "Pre - Increment - Decrement : it will change the value here and reflect it here also.",
+                            "Post - Increment - Decrement : it will change the value here and won't reflect it here also."
+                        ]
+                    }, {
+                        topicName: "Conditional Operator",
+                        topicContent: "The conditional operator in Java, also known as the ternary operator (? :), is a shorthand for the if-else statement. It allows for a compact way to write conditional expressions.",
+                        topicPoints: [
+                            "Condition: A boolean expression (true or false).",
+                            "value_if_true: The value assigned if the condition is true.",
+                            "value_if_false: The value assigned if the condition is false.",
+                            "Example : int min = (a < b) ? a : b;"
+                        ],
+                        topicExample: [
+                            "public class TernaryExample {",
+                            " public static void main(String[] args) {",
+                            "  int a = 10, b = 20;",
+                            "  int min = (a < b) ? a : b;",
+                            "  System.out.println('Minimum value: ' + min);",
+                            " }", "}","Output : Minimum value: 10"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Control Statements",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Control Statements",
+                        topicContent: "Control statements in Java manage the flow of program execution. They allow us to make decisions, repeat actions, and jump between statements."
+                    },{
+                        topicName: "Types of Control Statements",
+                        topicContent: "Control statements are categorized into three main types:",
+                        topicPoints: [
+                            "Selection (Decision-Making) Statements",
+                            "Looping (Iteration) Statements",
+                            "Jump Statements"
+                        ]
+                    },{
+                        topicName: "Selection (Decision-Making) Statements",
+                        topicContent: "Selection statements allow the program to make decisions based on conditions. They control the flow of execution by choosing different paths.",
+                        topicPoints: [
+                            "if Statement – Executes a block of code if a condition is true",
+                            "if-else Statement – Executes one block if true, another if false.",
+                            "if-else-if Ladder – Used for multiple conditions.",
+                            "switch Statement – Selects one case out of many based on a value."
+                        ]
+                    },{
+                        topicName: "Looping (Iteration) Statements",
+                        topicContent: "Looping statements are used to repeat a block of code multiple times based on a condition. We need to give an range(start value and end value). Without range loop will throw an error or it goes to infinite loop state.",
+                        topicPoints: [
+                            "for Loop – Runs a block of code a specific number of times.",
+                            "while Loop – Repeats while a condition is true.",
+                            "do-while Loop – Runs at least once, then repeats while true."
+                        ]
+                    },{
+                        topicName: "Jump Statements",
+                        topicContent: "Jump statements alter the normal flow of execution by jumping to different parts of the program.",
+                        topicPoints: [
+                            "break – Exits a loop or switch statement.",
+                            "continue – Skips the current iteration and moves to the next one.",
+                            "return – Exits from a method."
                         ]
                     }
                 ]
             }
         }
     ]
-
-    const topics = ["Variable", "Keywords"];
 
     const { topicNameKey } = useParams(); // Get topic from URL
 
@@ -127,21 +240,6 @@ const Content = () => {
 
     return (
         <div className='main-container'>
-            <div style={{ width: '200px' }}>
-                {/* Navigation Links to Other Topics */}
-                <h3>Topics:</h3>
-                <ul>
-                    {topics
-                        .map((t, index) => (
-                            <li key={index}>
-                                <Link to={`/topic/${t}`}>{t}</Link>
-                            </li>
-                        ))}
-                </ul>
-
-                {/* Back to Topics List */}
-                {/* <Link to="/">Home</Link> */}
-            </div>
             <div className="sidebar-container">
                 {topicsAndContents !== null ?
                     <div>
@@ -160,11 +258,25 @@ const Content = () => {
                     <div key={i}>
                         <h2>{content.topicName}</h2>
                         <p>{content.topicContent}</p>
-                        <ul>
+                        <ol>
                             {content.topicPoints ? content.topicPoints.map((contentPoints, pointsIndex) => {
                                 return <li key={pointsIndex}>{contentPoints}</li>
                             }) : ""}
-                        </ul>
+                        </ol>
+                        {content.topicExample ?
+                            <div className="card bg-dark text-white">
+                                <div className="card-body">
+                                    <pre className="mb-0">
+                                        <ul className='code-container'>
+                                            {content.topicExample.map((example, exampleIndex) => {
+                                                return <li key={exampleIndex}>{example}</li>
+                                            })}
+                                        </ul>
+                                    </pre>
+                                </div>
+                            </div>
+                            : ""
+                        }
                     </div>
                 ))}
             </div>
