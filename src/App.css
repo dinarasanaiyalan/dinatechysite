@@ -16,11 +16,11 @@
   margin: 10px 20px;
 }
 
-.menu-list li{
+.topic-list li, .menu-list li{
   list-style-type: none;
 }
 
-.menu-list li a{
+.topic-list li a, .menu-list li a{
   text-decoration: none;
 }
 
@@ -38,6 +38,13 @@
 
 .content-container{
   width: 70%;
+}
+
+.menu-list{
+  display: flex;
+  gap: 2rem;
+  font-size: large;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
