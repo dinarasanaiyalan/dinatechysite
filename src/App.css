@@ -16,7 +16,7 @@
   margin: 10px 20px;
 }
 
-.topic-list li, .menu-list li{
+.topic-list li, .menu-list li, .code-container li{
   list-style-type: none;
 }
 

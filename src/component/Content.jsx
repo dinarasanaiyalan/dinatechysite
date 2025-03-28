@@ -4,7 +4,8 @@ import { TopicsContext } from './JavaNotes';
 
 const Content = () => {
 
-    const topics = ["Variable", "Keywords", "Operator", "Control Statements", "Decision-Making Statements"];
+    const topics = ["Variable", "Keywords", "Operator", "Control Statements", 
+        "Decision-Making Statements","Looping Statements","Jump Statements","OOPS","Class"];
 
     const { topicsDetials } = useContext(TopicsContext);
 
@@ -40,7 +41,7 @@ const Content = () => {
             </div>
             <div className="content-container">
                 {topicsAndContents.mainContent.map((content, i) => (
-                    <div key={i}>
+                    <div key={i} className='mt-1'>
                         <h2>{content.topicName}</h2>
                         <p>{content.topicContent}</p>
                         <ol>

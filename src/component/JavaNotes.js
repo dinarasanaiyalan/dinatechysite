@@ -180,7 +180,7 @@ export const TopicsProvider = ({ children }) => {
                             "  int a = 10, b = 20;",
                             "  int min = (a < b) ? a : b;",
                             "  System.out.println('Minimum value: ' + min);",
-                            " }", "}","Output : Minimum value: 10"
+                            " }", "}", "Output : Minimum value: 10"
                         ]
                     }
                 ]
@@ -193,7 +193,7 @@ export const TopicsProvider = ({ children }) => {
                     {
                         topicName: "Control Statements",
                         topicContent: "Control statements in Java manage the flow of program execution. They allow us to make decisions, repeat actions, and jump between statements."
-                    },{
+                    }, {
                         topicName: "Types of Control Statements",
                         topicContent: "Control statements are categorized into three main types:",
                         topicPoints: [
@@ -201,7 +201,7 @@ export const TopicsProvider = ({ children }) => {
                             "Looping (Iteration) Statements",
                             "Jump Statements"
                         ]
-                    },{
+                    }, {
                         topicName: "Selection (Decision-Making) Statements",
                         topicContent: "Selection statements allow the program to make decisions based on conditions. They control the flow of execution by choosing different paths.",
                         topicPoints: [
@@ -210,7 +210,7 @@ export const TopicsProvider = ({ children }) => {
                             "if-else-if Ladder – Used for multiple conditions.",
                             "switch Statement – Selects one case out of many based on a value."
                         ]
-                    },{
+                    }, {
                         topicName: "Looping (Iteration) Statements",
                         topicContent: "Looping statements are used to repeat a block of code multiple times based on a condition. We need to give an range(start value and end value). Without range loop will throw an error or it goes to infinite loop state.",
                         topicPoints: [
@@ -218,7 +218,7 @@ export const TopicsProvider = ({ children }) => {
                             "while Loop – Repeats while a condition is true.",
                             "do-while Loop – Runs at least once, then repeats while true."
                         ]
-                    },{
+                    }, {
                         topicName: "Jump Statements",
                         topicContent: "Jump statements alter the normal flow of execution by jumping to different parts of the program.",
                         topicPoints: [
@@ -281,12 +281,271 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "Looping Statements",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "For Loop",
+                        topicPoints: [
+                            "It is entry check loop.",
+                            "It first checks the condition, if the condition is satisfied then only loop will execute, otherwise won't execute.",
+                            "It contains three areas, (initialization; condition; increment/decrement)",
+                            "Initialization - will execute only once, at the start of the loop",
+                            "Condition - it will execute every time.",
+                            "Incre/Decre - it will also execute every time, but at the end of each loop.",
+                            "We can use it where the end value is known"
+                        ],
+                        topicExample: [
+                            "public class ForExample{",
+                            " public static void main(String[] args){",
+                            "  for(int i=1; i<11; i++){ // 1 < 11 - true 2 < 11 - true ..... 10<11 - true --> 11 < 11 - false",
+                            "    System.out.print(i+' '); // 1 2 .... 10",
+                            "  }",
+                            " }","}","Output:","  1 2 3 4 5 6 7 8 9 10"
+                        ]
+                    }, {
+                        topicName: "While Loop",
+                        topicPoints: [
+                            "It is also entry check loop.",
+                            "It first checks the condition, if the condition is satisfied then only loop will execute.",
+                            "Otherwise won't execute.",
+                            "It contains three areas, (initialization; condition; increment/decrement).",
+                            "Initialization - will execute only once, at the start of the loop.",
+                            "Condition - it will execute every time.",
+                            "Incre/Decre - it will also execute every time, but at the end of each loop.",
+                            "We can use it where the end value is Unknown."
+                        ],
+                        topicExample: [
+                            "public class WhileExample{",
+                            " public static void main(String[] args){",
+                            "  int j=1;// 1 2 ... 11",
+                            "  while(j<=10) { // 1<=10 - true --> 2>=10 - true ... 11>=10 - false",
+                            "     // to print only the odd numbers",
+                            "     if(j%2!=0) {",
+                            "         System.out.print(j+' ');",
+                            "     }",
+                            "     j++;",
+                            "   }",
+                            " }","}","Output:","  1 3 5 7 9"
+                        ]
+                    },{
+                        topicName: "Do-While Loop",
+                        topicPoints: [
+                            "It is also exit check loop.",
+                            "For this reason, the set of statements inside the do-while loop will execute once even if the condition is not satisfied.",
+                            "It contains three areas, (initialization; condition; increment/decrement).",
+                            "Initialization - will execute only once, at the start of the loop.",
+                            "Condition - it will execute every time.",
+                            "Incre/Decre - it will also execute every time, but at the end of each loop.",
+                            "we can use it where we need to execute the statements even once still the condition is false."
+                        ],
+                        topicExample: [
+                            "public class DoWhileExample{",
+                            " public static void main(String[] args){",
+                            "  int k=55;// 55 54",
+                            "  do {",
+                            "     if(k%2==0) { // (55%2) - 1 == 0 - false --> (54%2) - 0 == 0 - true ....",
+                            "         System.out.print(k+' ');",
+                            "     }",
+                            "     k--;",
+                            "  }while(k>=32); // 55>=32 - true --> 54>=32 --> true",
+                            " }","}","Output:","  54 52 50 48 46 44 42 40 38 36 34 32"
+                        ]
+                    },
+                ]
+            }
+        }, {
+            topicKey: "Jump Statements",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "continue",
+                        topicPoints: [
+                            "The continue statement skips the current iteration of a loop and moves to the next iteration. It is used to avoid executing certain statements inside a loop when a specific condition is met.",
+                            "When continue is encountered, the remaining code in the current iteration is skipped, and the loop proceeds to the next iteration.",
+                            "It can be used inside for, while, and do-while loops only.",
+                            "Often used to skip specific values or conditions inside a loop without stopping the entire loop.",
+                            "Unlike break, which exits the loop, continue only skips the current iteration and continues execution."
+                        ],
+                        topicExample: [
+                            "public class ContinueExample{",
+                            " public static void main(String[] args){",
+                            "  for(int i=1; i<11; i++){",
+                            "    System.out.print(i+' ');",
+                            "    if(a==5)",
+				            "       continue;",
+                            "    System.out.print(i+' ');",
+                            "  }",
+                            " }","}",
+                            "Output:",
+                            "  1 1 2 2 3 3 4 4 5 6 6 7 7 8 8 9 9 10 10",
+                            "Because of continue keyword 5 won't print second time."
+                        ]
+                    },{
+                        topicName: "break",
+                        topicPoints: [
+                            "The break statement immediately exits a loop or a switch statement when it is encountered. It is used to terminate the loop early based on a condition.",
+                            "When break is encountered inside a loop, the loop stops executing, and control moves to the next statement after the loop.",
+                            "It can be used inside for, while, do-while, and switch statements to exit early.",
+                            "break is often used when a certain condition is met, and further looping is unnecessary.",
+                            "It improves efficiency by stopping the loop once the required condition is satisfied, instead of running unnecessary iterations."
+                        ],
+                        topicExample: [
+                            "public class BreakExample{",
+                            " public static void main(String[] args){",
+                            "  for(int i=1; i<11; i++){",
+                            "    System.out.print(i+' ');",
+                            "    if(a==5)",
+				            "       break;",
+                            "  }",
+                            " }","}",
+                            "Output:",
+                            "  1 2 3 4 5",
+                            "Because of break keyword after printing 5 the loop will be terminated."
+                        ]
+                    },{
+                        topicName: "return",
+                        topicPoints: [
+                            "The return statement exits from a method and optionally returns a value to the caller. It is used to terminate a method execution and send a result back to the calling function.",
+                            "When return is encountered, the method stops execution and control goes back to the calling function.",
+                            "In methods with a return type (int, String, etc.), return must return a value.",
+                            "The data type of the returned value must match the method’s declared return type.",
+                            "return is commonly used in methods that compute values and send results back for further use."
+                        ],
+                        topicExample: [
+                            "public class BreakExample{",
+                            " public static void checkAge(int age) {",
+                            "    if (age < 18) {",
+                            "       System.out.println('Not eligible to vote');",
+                            "       return; // Exits the method early",
+                            "   }",
+                            "   System.out.println('Eligible to vote');",
+                            " }",
+                            " public static void main(String[] args){",
+                            "  checkAge(16);",
+                            "  checkAge(20);",
+                            " }","}",
+                            "Output:",
+                            "  Not eligible to vote",
+                            "  Eligible to vote"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "OOPS",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "OOPS (Object-Oriented Programming System)",
+                        topicContent: "Object-Oriented Programming System (OOPS) is a programming paradigm based on the concept of objects and classes. It allows structuring programs in a way that models real-world entities using objects."
+                    },
+                    {
+                        topicName: "Why Do We Need OOPS?",
+                        topicPoints:[
+                            "Encapsulation – Protects data by bundling variables and methods within a class.",
+                            "Code Reusability – Allows code reuse through inheritance, reducing redundancy.",
+                            "Data Security – Uses access modifiers (private, protected, public) to restrict unauthorized access.",
+                            "Better Code Maintenance – Makes code easier to modify, debug, and extend.",
+                            "Enhances Readability & Modularity – Structures code into classes and objects, improving organization.",
+                            "Supports Real-World Modeling – Helps design programs that closely resemble real-world objects and interactions."
+                        ]
+                    },
+                    {
+                        topicName: "Importance of OOPS in Java",
+                        topicPoints: [
+                            "Foundation of Java – Java is an object-oriented language; OOPS is its core concept.",
+                            "Improves Code Maintainability – Makes software development scalable and manageable.",
+                            "Reduces Code Duplication – Through inheritance, child classes reuse parent class functionality.",
+                            "Supports Large-Scale Development – Helps build complex applications efficiently.",
+                            "Encourages Code Reusability – Objects can be used multiple times without rewriting logic.",
+                            "Increases Software Reliability – Encourages modular and secure coding practices."
+                        ]    
+                    },
+                    {
+                        topicName: "Features of OOPS",
+                        topicPoints: [
+                            "Class and Object – A class is a blueprint, and an object is an instance of a class.",
+                            "Encapsulation – Hides data using private access and provides controlled access via methods.",
+                            "Abstraction – Hides unnecessary details and exposes only the relevant functionalities.",
+                            "Inheritance – Enables a child class to inherit properties and behavior from a parent class.",
+                            "Polymorphism – Allows multiple methods or operations to be performed using the same name (method overloading & overriding).",
+                            "Message Passing – Objects communicate with each other using method calls.",
+                            "Dynamic Binding – The method that needs to be executed is determined at runtime."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Class",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Class",
+                        topicContent: "A class in Java is a blueprint or template for creating objects. It defines properties (fields/variables) and behaviors (methods/functions) that an object can have."
+                    },
+                    {
+                        topicName: "Why Do We Need a Class?",
+                        topicPoints: [
+                            "Encapsulation of Data & Behavior – A class groups variables and methods into a single unit.",
+                            "Code Reusability – We can create multiple objects from the same class, avoiding code duplication.",
+                            "Modularity & Organization – A class helps organize code logically, making it easier to manage.",
+                            "Object-Oriented Programming (OOP) Support – A class enables OOP principles like inheritance, polymorphism, and abstraction."
+                        ]
+                    },{
+                        topicName: "Importance of Class in Java",
+                        topicPoints: [
+                            "Foundation of Java Programming – Every Java program is based on a class.",
+                            "Enables Object Creation – Objects are instantiated from classes, allowing real-world modeling.",
+                            "Enhances Maintainability – Code is easier to modify and extend when structured in classes.",
+                            "Supports Data Hiding – Access modifiers (private, public, protected) help control data access."
+                        ]
+                    },{
+                        topicName: "Example: Creating and Using a Class in Java",
+                        topicExample: [
+                            "// Defining a class",
+                            "class Car {",
+                            "   // Data members (fields)",
+                            "   String brand;",
+                            "   int speed;",
+                            "   // Constructor",
+                            "   Car(String brand, int speed) {",
+                            "       this.brand = brand;",
+                            "       this.speed = speed;",
+                            "   }",
+                            "   // Method to display car details",
+                            "   void showDetails() {",
+                            "       System.out.println('Brand: ' + brand);",
+                            "       System.out.println('Speed: ' + speed + ' km/h');",
+                            "   }",
+                            "}",
+                            "// Main class to use the Car class",
+                            "public class CarExample {",
+                            "   public static void main(String[] args) {",
+                            "       // Creating an object of the Car class",
+                            "       Car myCar = new Car('Toyota', 120);",  
+                            "       // Calling method to display details",
+                            "       myCar.showDetails();",
+                            "   }",
+                            "}",
+                            "Output:",
+                            "  Brand: Toyota",
+                            "  Speed: 120 km/h"
+                        ]
+                    }
+                ]
+            }
         }
     ];
 
-  return (
-    <TopicsContext.Provider value={{ topicsDetials }}>
-      {children}
-    </TopicsContext.Provider>
-  );
+    return (
+        <TopicsContext.Provider value={{ topicsDetials }}>
+            {children}
+        </TopicsContext.Provider>
+    );
 };
