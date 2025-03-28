@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/dinatechysite/static/css/main.e14adbe7.css",
-    "main.js": "/dinatechysite/static/js/main.15ac502a.js",
+    "main.css": "/dinatechysite/static/css/main.c4d04d21.css",
+    "main.js": "/dinatechysite/static/js/main.77b1dc02.js",
     "static/js/453.681cdf9a.chunk.js": "/dinatechysite/static/js/453.681cdf9a.chunk.js",
     "static/media/DinaTechy-Logo.png": "/dinatechysite/static/media/DinaTechy-Logo.cfb97cb0a4a0ea44c4ff.png",
     "index.html": "/dinatechysite/index.html",
-    "main.e14adbe7.css.map": "/dinatechysite/static/css/main.e14adbe7.css.map",
-    "main.15ac502a.js.map": "/dinatechysite/static/js/main.15ac502a.js.map",
+    "main.c4d04d21.css.map": "/dinatechysite/static/css/main.c4d04d21.css.map",
+    "main.77b1dc02.js.map": "/dinatechysite/static/js/main.77b1dc02.js.map",
     "453.681cdf9a.chunk.js.map": "/dinatechysite/static/js/453.681cdf9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e14adbe7.css",
-    "static/js/main.15ac502a.js"
+    "static/css/main.c4d04d21.css",
+    "static/js/main.77b1dc02.js"
   ]
 }
