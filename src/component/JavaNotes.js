@@ -540,6 +540,76 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "Object",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Object",
+                        topicContent: "An object is an instance of a class. It represents a real-world entity with state (attributes) and behavior (methods).",
+                        topicPoints: [
+                            "Example: A Car is a class, and a specific Toyota car is an object with attributes like color, speed, and model."
+                        ]
+                    },{
+                        topicName: "Why Do We Need an Object?",
+                        topicPoints: [
+                            "Represents Real-World Entities – Objects allow programs to model real-world entities like cars, employees, and bank accounts.:",
+                            "Encapsulates Data and Behavior – Objects bundle variables (state) and methods (behavior) together.",
+                            "Supports Code Reusability – Multiple objects can be created from the same class, reducing code duplication.",
+                            "Facilitates Object-Oriented Programming (OOP) – Java is based on objects; without them, OOP cannot be implemented.",
+                            "Enables Dynamic Memory Allocation – Objects are stored in the heap memory, making Java programs efficient."
+                        ]
+                    },{
+                        topicName: "Importance of Objects in Java",
+                        topicPoints: [
+                            "Foundation of Java Programs – Every Java program uses objects to execute methods and store data.",
+                            "Allows Data Manipulation – Objects interact with each other to process and exchange information.",
+                            "Enhances Code Modularity – Objects enable breaking large programs into small, reusable parts.",
+                            "Improves Maintainability – Since objects encapsulate state and behavior, managing and modifying code is easier.",
+                            "Supports Message Passing – Objects communicate by calling each other's methods, making systems interactive."
+                        ]
+                    },{
+                        topicName: "Features of an Object in Java",
+                        topicPoints: [
+                            "State (Attributes) – The object's properties (e.g., color, speed for a car).",
+                            "Behavior (Methods) – The object's actions (e.g., drive(), brake() for a car).",
+                            "Identity – Each object has a unique reference in memory.",
+                            "Encapsulation – Objects keep their data secure using access modifiers (private, public).",
+                            "Reusability – Objects of the same class share structure and behavior, reducing redundant code."
+                        ]
+                    },{
+                        topicName: "Example: Creating and Using an Object in Java",
+                        topicExample: [
+                            "// Defining a class",
+                            "class Car {",
+                            "   // Attributes (State)",
+                            "   String brand;",
+                            "   int speed;",
+                            "   // Constructor",
+                            "   Car(String brand, int speed) {",
+                            "      this.brand = brand;",
+                            "        this.speed = speed;",
+                            "   }",
+                            "   // Method (Behavior)",
+                            "   void showDetails() {",
+                            "       System.out.println('Brand: ' + brand);",
+                            "       System.out.println('Speed: ' + speed + ' km/h');",
+                            "   }",
+                            "}",
+                            "// Main class to create and use objects",
+                            "public class ObjectExample {",
+                            "   public static void main(String[] args) {",
+                            "       // Creating an object of the Car class",
+                            "       Car myCar = new Car('Toyota', 120);",       
+                            "       // Calling method to display object details",
+                            "       myCar.showDetails();",
+                            "   }",
+                            "}"
+                        ]
+                    },
+                ]
+            }
         }
     ];
 
