@@ -16,11 +16,11 @@
   margin: 10px 20px;
 }
 
-.topic-list li, .menu-list li, .code-container li{
+.topic-list li, .menu-list li, .code-container li, .accordion-list li{
   list-style-type: none;
 }
 
-.topic-list li a, .menu-list li a{
+.topic-list li a, .menu-list li a, .accordion-list li a{
   text-decoration: none;
 }
 

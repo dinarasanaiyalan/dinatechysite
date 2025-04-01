@@ -5,7 +5,7 @@ import { TopicsContext } from './JavaNotes';
 const Content = () => {
 
     const topics = ["Variable", "Keywords", "Operator", "Control Statements", 
-        "Decision-Making Statements","Looping Statements","Jump Statements","OOPS","Class","Object"];
+        "Decision-Making Statements","Looping Statements","Jump Statements","Array","OOPS","Class","Object"];
 
     const { topicsDetials } = useContext(TopicsContext);
 

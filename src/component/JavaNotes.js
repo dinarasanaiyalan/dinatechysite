@@ -610,6 +610,78 @@ export const TopicsProvider = ({ children }) => {
                     },
                 ]
             }
+        }, {
+            topicKey: "Array",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Array",
+                        topicContent: "An array in Java is a collection of elements of the same data type stored in contiguous memory locations. It allows storing multiple values under a single variable name instead of creating separate variables for each value.",
+                        topicPoints: [
+                            "Example: A Car is a class, and a specific Toyota car is an object with attributes like color, speed, and model."
+                        ]
+                    },{
+                        topicName: "Why Do We Need an Array?",
+                        topicPoints: [
+                            "Stores Multiple Values Efficiently – Instead of creating separate variables, we store multiple values in a single structure.",
+                            "Reduces Code Complexity – Using arrays simplifies code by allowing easy storage and retrieval of elements.",
+                            "Supports Indexed Access – Elements are accessed using an index (0-based), making data retrieval faster.",
+                            "Enhances Performance – Arrays improve memory management and execution speed by storing elements in contiguous memory locations.",
+                            "Essential for Data Structures – Arrays form the basis for advanced data structures like lists, stacks, and queues."
+                        ]
+                    },{
+                        topicName: "Importance of Arrays in Java",
+                        topicPoints: [
+                            "Efficient Data Storage – Arrays store multiple elements in an organized manner using indexing.",
+                            "Facilitates Iteration – Easily loop through elements using for or for-each loops.",
+                            "Optimized Memory Usage – Arrays store elements without memory overhead associated with individual variables.",
+                            "Foundation for Advanced Algorithms – Sorting, searching, and mathematical computations rely on arrays.",
+                            "Supports Multi-Dimensional Data Representation – Arrays allow creating 2D (matrices) and 3D structures for complex computations."
+                        ]
+                    },{
+                        topicName: "Features of Arrays in Java",
+                        topicPoints: [
+                            "Fixed Size – The array size is defined at the time of declaration and cannot change dynamically.",
+                            "Homogeneous Elements – All elements must be of the same data type.",
+                            "Indexed Access – Elements are accessed using 0-based indexing (first element at index 0).",
+                            "Efficient Element Retrieval – Accessing elements is fast due to direct memory addressing.",
+                            "Supports Primitive & Object Types – Arrays store both primitive data types (int, double, etc.) and objects."
+                        ]
+                    },{
+                        topicName: "Example: Declaring and Using an Array in Java",
+                        topicExample: [
+                            "public class ArrayExample {",
+                            " public static void main(String[] args) {",
+                            "  //Syntax : ",
+                            "  //   data_type[] var_name = new data_type[length];",
+                            "  //   data_type[] var_name = {val1, val2,,,, valn};",
+                            "  //   varname[index]; to fetch the value or element",
+                            "  //   varname[index] = value; to append value to the array - we can only do this using the index.",
+                            "   int[] arr1 = new int[5]; // length = 5, index = 5-1 = 4",
+		                    "   System.out.println(arr1.length);// it will give the length of the array based on Number of value or element.",
+                            "   arr1[3] = 78;",
+                            "   System.out.println(arr1[3]);",
+                            "   double[] arr2 = {23.5,56.4,89,98.0,78,67}; // length = 6, index = 6-1 = 5",
+		                    "   System.out.println(arr2.length);",
+                            "   System.out.println(arr2[3]);",
+                            "   // Iteration into Array using for loop",
+                            "   int arrSize = arr2.length;",
+                            "   for(int i=0; i<arrSize; i++) {",
+                            "     System.out.print(arr2[i]+' ');// 0, 1, 2, 3, 4, 5, 6 - false",
+                            "   }",
+                            " }",
+                            "}",
+                            "Output : ",
+                            "  5",
+                            "  78",
+                            "  6",
+                            "  98.0",
+                            "  23.5 56.4 89 98.0 78 67"
+                        ]
+                    }
+                ]
+            }
         }
     ];
 
