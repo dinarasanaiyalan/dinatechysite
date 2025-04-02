@@ -682,6 +682,159 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        },{
+            topicKey: "Types of Array",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Types of Array",
+                        topicContent: "In Java, arrays are used to store multiple values of the same data type in a single variable. There are mainly two types of arrays in Java."
+                    },{
+                        topicName: "One-Dimensional Array (1D Array)",
+                        topicContent: "A one-dimensional array is the simplest type of array, where elements are stored in a single row (or list format).",
+                        topicPoints: [
+                            "Elements are stored in a linear format.",
+                            "Access elements using indexing (0-based index).",
+                            "Mostly used for storing lists of values (e.g., marks of students, employee IDs)."
+                        ],
+                        topicExample: [
+                            "public class OneDArrayExample {",
+                            "    public static void main(String[] args) {",
+                            "       int[] numbers = {10, 20, 30, 40, 50}; // Declaring and initializing 1D array",
+                            "       // Accessing array elements",
+                            "       for (int num : numbers) {",
+                            "           System.out.print(num+' ');",
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output: ",
+                            "  10 20 30 40 50"
+
+                        ]
+                    },{
+                        topicName: "Multi-Dimensional Arrays (2D & 3D Arrays)",
+                        topicContent: "A multi-dimensional array stores elements in multiple rows and columns, like a matrix or table. The most common type is the 2D array, but Java also supports higher-dimensional arrays (like 3D arrays)."
+                    },{
+                        topicName: "Two-Dimensional Array (2D Array)",
+                        topicContent: "A 2D array stores values in the form of rows and columns (matrix format).",
+                        topicPoints: [
+                            "Used for storing tabular data like matrices, spreadsheets, or images.",
+                            "Elements are accessed using two indices (matrix[row][column]).",
+                            "Commonly used in game development, image processing, and scientific computing."
+                        ],
+                        topicExample: [
+                            "public class TwoDArrayExample {",
+                            "   public static void main(String[] args) {",
+                            "       int[][] matrix = {",
+                            "           {1, 2, 3},",
+                            "           {4, 5, 6},",
+                            "           {7, 8, 9}",
+                            "       };",
+                            "       // Accessing elements using nested loops",
+                            "       for (int i = 0; i < 3; i++) {",
+                            "           for (int j = 0; j < 3; j++) {",
+                            "               System.out.print(matrix[i][j] + ' ');",
+                            "           }",
+                            "           System.out.println(); // New line for each row",
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output: ",
+                            "  1 2 3",
+                            "  4 5 6",
+                            "  7 8 9"
+                        ]
+                    },{
+                        topicName: "Three-Dimensional Array (3D Array)",
+                        topicContent: "A 3D array is an extension of a 2D array where elements are stored in layers (like multiple matrices stacked together).",
+                        topicPoints: [
+                            "Used in complex data structures like 3D gaming, scientific simulations, and mathematical calculations.",
+                            "Access elements using three indices (cube[layer][row][column])."
+                        ],
+                        topicExample: [
+                            "public class ThreeDArrayExample {",
+                            "   public static void main(String[] args) {",
+                            "       int[][][] cube = {",
+                            "           { {1, 2}, {3, 4} },",
+                            "           { {5, 6}, {7, 8} }",
+                            "       };",
+                            "       // Accessing elements",
+                            "       for (int i = 0; i < 2; i++) {",
+                            "           for (int j = 0; j < 2; j++) {",
+                            "               for (int k = 0; k < 2; k++) {",
+                            "                   System.out.print(cube[i][j][k] + ' ');",
+                            "               }",
+                            "               System.out.println();",
+                            "           }",
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output: ",
+                            "  1 2",
+                            "  3 4",
+                            "  5 6",
+                            "  7 8"
+                        ]
+                    }
+                ]
+            }
+        },{
+            topicKey: "Inheritance",
+            topicValue: {
+                whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
+                mainContent: [
+                    {
+                        topicName: "Inheritance",
+                        topicContent: "Inheritance is a core Object-Oriented Programming (OOP) concept in Java that allows one class to acquire the properties and behaviors of another class. It helps in code reusability, extensibility, and maintainability by enabling the creation of a hierarchy where a child class (subclass) inherits from a parent class (superclass). This means the child class can use the attributes and methods of the parent class, reducing code duplication. In Java, inheritance is implemented using the extends keyword, making it easier to develop scalable and structured applications."
+                    },{
+                        topicName: "Why do we need Inheritance?",
+                        topicPoints: [
+                            "Code Reusability – Avoids writing the same code multiple times by reusing existing code.",
+                            "Improves Maintainability – Updates or bug fixes in the parent class automatically reflect in child classes.",
+                            "Extensibility – Allows adding new features to an existing class without modifying it.",
+                            "Enhances Readability – Organizes code in a hierarchical structure, making it more understandable.",
+                            "Reduces Code Duplication – Promotes efficient memory usage and reduces redundancy."
+                        ]
+                    },{
+                        topicName: "When do we need Inheritance?",
+                        topicPoints: [
+                            "When multiple classes share common attributes and behaviors – Instead of redefining common properties, we can inherit them.",
+                            "When we want to extend the functionality of an existing class – Adding extra methods or overriding existing ones without modifying the original class.",
+                            "When we need a hierarchical structure – For example, in an employee management system, we may have a base class Employee and subclasses like Manager, Developer, and Intern.",
+                            "When implementing polymorphism – Inheritance helps achieve method overriding, which allows different implementations of the same method in different classes.",
+                            "When following the DRY principle (Don’t Repeat Yourself) – Ensures efficient, structured, and reusable code."
+                        ]
+                    },{
+                        topicName: "How to Implement Inheritance in Java?",
+                        topicExample: [
+                            "// Parent class (Super class)",
+                            "class Animal {",
+                            "   void eat() {",
+                            "       System.out.println('This animal eats food.');",
+                            "   }",
+                            "}",
+                            "// Child class (Subclass) inheriting Animal",
+                            "class Dog extends Animal {",
+                            "   void bark() {",
+                            "       System.out.println('The dog barks.');",
+                            "   }",
+                            "}",
+                            "// Main class to test Inheritance",
+                            "public class InheritanceExample {",
+                            "   public static void main(String[] args) {",
+                            "       Dog myDog = new Dog();",
+                            "       myDog.eat();  // Inherited method from Animal class",
+                            "       myDog.bark(); // Dog's own method",
+                            "   }",
+                            "}",
+                            "Output:",
+                            "   This animal eats food.",
+                            "   The dog barks."
+                        ]
+                    }
+                ]
+            }
         }
     ];
 

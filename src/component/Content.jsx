@@ -5,7 +5,8 @@ import { TopicsContext } from './JavaNotes';
 const Content = () => {
 
     const topics = ["Variable", "Keywords", "Operator", "Control Statements", 
-        "Decision-Making Statements","Looping Statements","Jump Statements","Array","OOPS","Class","Object"];
+        "Decision-Making Statements","Looping Statements","Jump Statements",
+        "Array","Types of Array","OOPS","Class","Object","Inheritance"];
 
     const { topicsDetials } = useContext(TopicsContext);
 
@@ -44,11 +45,11 @@ const Content = () => {
                     <div key={i} className='mt-1'>
                         <h2>{content.topicName}</h2>
                         <p>{content.topicContent}</p>
-                        <ol>
+                        <ul className='topic-points'>
                             {content.topicPoints ? content.topicPoints.map((contentPoints, pointsIndex) => {
-                                return <li key={pointsIndex}>{contentPoints}</li>
+                                return <li key={pointsIndex}>✅ {contentPoints}</li>
                             }) : ""}
-                        </ol>
+                        </ul>
                         {content.topicExample ?
                             <div className="card bg-dark text-white">
                                 <div className="card-body">
