@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/dinatechysite/static/css/main.7ba5ebcd.css",
-    "main.js": "/dinatechysite/static/js/main.3f851ac1.js",
+    "main.js": "/dinatechysite/static/js/main.47be9448.js",
     "static/js/453.681cdf9a.chunk.js": "/dinatechysite/static/js/453.681cdf9a.chunk.js",
     "static/media/DinaTechy-Logo.png": "/dinatechysite/static/media/DinaTechy-Logo.cfb97cb0a4a0ea44c4ff.png",
     "index.html": "/dinatechysite/index.html",
     "main.7ba5ebcd.css.map": "/dinatechysite/static/css/main.7ba5ebcd.css.map",
-    "main.3f851ac1.js.map": "/dinatechysite/static/js/main.3f851ac1.js.map",
+    "main.47be9448.js.map": "/dinatechysite/static/js/main.47be9448.js.map",
     "453.681cdf9a.chunk.js.map": "/dinatechysite/static/js/453.681cdf9a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7ba5ebcd.css",
-    "static/js/main.3f851ac1.js"
+    "static/js/main.47be9448.js"
   ]
 }
