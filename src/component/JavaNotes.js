@@ -682,7 +682,7 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
-        },{
+        }, {
             topicKey: "Types of Array",
             topicValue: {
                 whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
@@ -779,7 +779,7 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
-        },{
+        }, {
             topicKey: "Inheritance",
             topicValue: {
                 whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
@@ -831,6 +831,54 @@ export const TopicsProvider = ({ children }) => {
                             "Output:",
                             "   This animal eats food.",
                             "   The dog barks."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Constructor",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Constructor",
+                        topicContent: "Constructor's are used to create Object and initialize Instance variable's. If we didn't create any User-defined constructor, at the Runtime Compiler will create one Pre-defined Constructor with No-Parameter in it.",
+                        topicPoints: [
+                            "Constructor name must be same as Class Name. So, if we didn't create any User-defined constructor, we don't need to worry about the Constructor name for Object creation, instead simply use Class name.",
+                            "A constructor does not have a return type, not even void.",
+                            "Constructor is automatically called when an object is created, marking it as static, final, or abstract causes an error.",
+                            "If you need to use super() or this() in Constructor, then it must Be the First Statement, Otherwise it throw an error.",
+                            "Constructor can't be inherited, but a Sub class can call Parent Class Constructor using super() method, the process is called Constructor Calling Chain.",
+                            "We can't call Constructor explicitly like a method, if we do it will throw an error."
+                        ]
+                    },{
+                        topicName: "Example : ",
+                        topicExample: [
+                            "class Car {",
+                            "   void CarBrand() { // ❌ Error: Constructor name should be 'Car' and shouldn't have return type",
+                            "      System.out.println('Car Constructor');",
+                            "   }",
+                            "   static final Student() { // ❌ Error: Constructors cannot be static or final",
+                            "       System.out.println('Final Constructor');",
+                            "   }",
+                            "   Car(String brand) { // ✅ Constructor name matches the class name and without return type",
+                            "       System.out.println('Car Constructor');",
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       Car carOne = new Car(); // ❌ Error: No default constructor",
+                            "       Car carTwo = new Car('Hundai'); // ✅ works fine",
+                            "       carTwo.Car('Swift'); // ❌ Error: Cannot call constructor explicitly",
+                            "   }",
+                            "}",
+                            "class Brand extends Car{",
+                            "   Brand(){",
+                            "       super('Ferari'); // ✅ Calls parent constructor explicitly",
+                            "       System.out.println('Class B Constructor');",
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       Brand obj = new Brand(); // ✅ Calls both parent and child constructor",
+                            "   }",
+                            "}"
                         ]
                     }
                 ]
