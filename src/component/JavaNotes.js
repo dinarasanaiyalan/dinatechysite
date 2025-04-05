@@ -806,6 +806,15 @@ export const TopicsProvider = ({ children }) => {
                             "When following the DRY principle (Don’t Repeat Yourself) – Ensures efficient, structured, and reusable code."
                         ]
                     },{
+                        topicName: "Types of Inheritance",
+                        topicPoints: [
+                            "Single Inheritance",
+                            "Multiple Inheritance",
+                            "Multi-level Inheritance",
+                            "Hierarchical Inheritance",
+                            "Hybrid Inheritance"
+                        ]
+                    },{
                         topicName: "How to Implement Inheritance in Java?",
                         topicExample: [
                             "// Parent class (Super class)",
@@ -879,6 +888,226 @@ export const TopicsProvider = ({ children }) => {
                             "       Brand obj = new Brand(); // ✅ Calls both parent and child constructor",
                             "   }",
                             "}"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Method",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Method",
+                        topicContent: "A Method is used to execute set of statement. Why we need to use is if want particular set of statement more than one place. Declare and Define it in a class. If we want simply create an Object for that class and access it."
+                    },{
+                        topicName: "Use's of Method : ",
+                        topicPoints: [
+                            "If logic needs to be changed, only the method needs to be updated.",
+                            "No need to modify code in multiple places.",
+                            "Breaking code into smaller chunks (methods) simplifies logic and debugging.",
+                            "Each method handles one specific task.",
+                            "Methods make the code cleaner and easier to understand.",
+                            "Complex programs are divided into meaningful names and tasks.",
+                            "Once a method is written, it can be reused throughout the program.",
+                            "No need to write the same code again and again.",
+                            "Methods support modular programming by dividing the code into smaller units.",
+                            "Makes it easier to assign tasks to team members in larger projects.",
+                            "Eliminates duplication of logic.",
+                            "Helps maintain a consistent coding structure."
+                        ],
+                        topicExample: [
+                            "class Bank{",
+                            "   public void balance(){",
+                            "       System.out.println('Your Account Balance is : 40000');",
+                            "   }",
+                            "   public static void main(String[] args){",
+                            "       Bank bank = new Bank();",
+                            "       bank.balance();",
+                            "   }",
+                            "}",
+                            "Output:",
+                            "   Your Account Balance is : 40000"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Constructor Calling Chain",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Constructor Calling Chain",
+                        topicContent: "The process of calling the parent or super class constructor from the child or sub class constructor (or) inside the same class using super() and this() method.",
+                        topicPoints: [
+                            "this() - used to call the constructor inside the same class.",
+                            "super() - used to call the constructor from the other class.",
+                            "Important thing is, this method's must be the first statement inside the constructor. Otherwise it throws the error."
+                        ]
+                    },{
+                        topicName: "Whst Constructor Chaining?",
+                        topicPoints: [
+                            "To avoid duplicate initialization code.",
+                            "To follow DRY (Don't Repeat Yourself) principle.",
+                            "To reuse constructor logic in a clean and structured way."
+                        ],
+                        topicExample: [
+                            "// Parent class",
+                            "class Vehicle {",
+                            "   Vehicle() {",
+                            "       System.out.println('Vehicle constructor called');",
+                            "   }",
+                            "   Vehicle(String type) {",
+                            "       System.out.println('Vehicle type: ' + type);",
+                            "   }",
+                            "}",
+                            "// Child class",
+                            "class Car extends Vehicle {",
+                            "   Car() {",
+                            "       this('Sedan');  // Calls Car(String)",
+                            "       System.out.println('Car default constructor');",
+                            "   }",
+                            "   Car(String model) {",
+                            "       super('Four Wheeler');  // Calls parent class constructor",
+                            "       System.out.println('Car model: ' + model);",
+                            "   }",
+                            "}",
+                            "// Main class",
+                            "public class Main {",
+                            "   public static void main(String[] args) {",
+                            "       Car car1 = new Car(); // Only one object, but all constructors get called",
+                            "   }",
+                            "}",
+                            "Output: ",
+                            "   Vehicle type: Four Wheeler",
+                            "   Car model: Sedan",
+                            "   Car default constructor"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Single Inheritance",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Single Inheritance",
+                        topicContent: "Acquiring(extends) the variables and methods of another class. This allows the child class to acquire the properties and behaviors (fields and methods) of the parent class.",
+                        topicPoints: [
+                            "Code Reusability – Child class can use methods from the parent class.",
+                            "Clear Hierarchy – Easy to understand and manage.",
+                            "Avoids Redundancy – No need to rewrite existing logic.",
+                            "Extensibility – New features can be added in the child class."
+                        ],
+                        topicExample: [
+                            "// Parent class",
+                            "class Animal {",
+                            "   void eat() {",
+                            "       System.out.println('This animal eats food.');",
+                            "   }",
+                            "}",
+                            "// Child class",
+                            "class Dog extends Animal {",
+                            "   void bark() {",
+                            "       System.out.println('The dog barks.');",
+                            "   }",
+                            "}",
+                            "// Main class",
+                            "public class SingleInheritanceExample {",
+                            "   public static void main(String[] args) {",
+                            "       Dog dog = new Dog();",
+                            "       dog.eat();   // Inherited from Animal",
+                            "       dog.bark();  // Own method",
+                            "   }",
+                            "}",
+                            "Output: ",
+                            "   This animal eats food.",
+                            "   The dog barks."
+                        ]
+                    },{
+                        topicName: "Key Points",
+                        topicPoints: [
+                            "The Dog class inherits the eat() method from the Animal class.",
+                            "You can access both parent and child class methods using the child class object.",
+                            "Java supports only single inheritance with classes (but multiple inheritance with interfaces)."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Multi-level Inheritance",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Multi-level Inheritance",
+                        topicContent: "It is also acquring the Parent or Super class properties. But it is a level of inheritance. It means a Single class can act as both Parent and Child at the same time, like it act as Parent to it's child and Child to it's parent.",
+                        topicPoints: [
+                            "Grandparent → Parent → Child"
+                        ]
+                    },{
+                        topicName: "Why Use Multi-level Inheritance?",
+                        topicPoints: [
+                            "To create a hierarchy of classes.",
+                            "To reuse code from both parent and grandparent classes.",
+                            "To extend functionality step-by-step."
+                        ]
+                    },{
+                        topicName: "Syntax :",
+                        topicExample: [
+                            "class A {",
+                            "   // Grandparent",
+                            "}",
+                            "class B extends A {",
+                            "   // Parent",
+                            "}",
+                            "class C extends B {",
+                            "   // Child",
+                            "}"
+                        ]
+                    },{
+                        topicName: "Example :",
+                        topicExample: [
+                            "// Grandparent class",
+                            "class Animal {",
+                            "   void eat() {",
+                            "       System.out.println('Animals eat food.');",
+                            "   }",
+                            "}",
+                            "// Parent class",
+                            "class Dog extends Animal {",
+                            "   void bark() {",
+                            "       System.out.println('Dogs bark.');",
+                            "   }",
+                            "}",
+                            "// Child class",
+                            "class Puppy extends Dog {",
+                            "   void weep() {",
+                            "       System.out.println('Puppies weep.');",
+                            "   }",
+                            "}",
+                            "// Main class",
+                            "public class MultiLevelExample {",
+                            "   public static void main(String[] args) {",
+                            "       Puppy puppy = new Puppy();",
+                            "       // Calling methods from all levels",
+                            "       puppy.eat();   // from Animal",
+                            "       puppy.bark();  // from Dog",
+                            "       puppy.weep();  // from Puppy",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Animals eat food.",
+                            "   Dogs bark.",
+                            "   Puppies weep."
+                        ]
+                    },{
+                        topicName: "Key Points",
+                        topicPoints: [
+                            "Puppy has access to methods of both Dog and Animal.",
+                            "Each level extends the functionality of the previous level."
                         ]
                     }
                 ]
