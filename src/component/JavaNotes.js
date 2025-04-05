@@ -1112,6 +1112,191 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "Multiple Inheritance",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Multiple Inheritance",
+                        topicContent: "It is acquring the more than one Parent or Super class properties. It can't be achieved using Class to avoid ambiguity (also called the diamond problem)., but we can achieved it through Interface and also inheriting one class and more than one interface will also work."
+                    },{
+                        topicName: "Why doesn't Java support class-based multiple inheritance?",
+                        topicPoints: [
+                            "Imagine two parent classes have the same method name, and a child class inherits both. Java can't decide which version to use.",
+                            "This is called the Diamond Problem. To avoid it, Java only allows multiple inheritance through interfaces, which don’t have method implementations (until Java 8, where they may have default methods)."
+                        ]
+                    },{
+                        topicName: "",
+                        topicExample: [
+                            "class A {",
+                            "   void show() {",
+                            "       System.out.println('Show from A');",
+                            "   }",
+                            "}",
+                            "class B {",
+                            "   void show() {",
+                            "       System.out.println('Show from B');",
+                            "   }",
+                            "}",
+                            "// ❌ This is illegal in Java",
+                            "class C extends A, B { // Error!",
+                            "   public static void main(String[] args) {",
+                            "       C obj = new C();",
+                            "       obj.show();",
+                            "   }",
+                            "}"                            
+                        ]
+                    },{
+                        topicName: "Multiple Inheritance with Interfaces",
+                        topicContent: "Overriding is the key to solving ambiguity in multiple inheritance via interfaces in Java.",
+                        topicPoints: [
+                            "When two interfaces have the same method name (especially default methods from Java 8 onward), Java doesn’t know which one to inherit.",
+                            "Java forces you to override the method in the implementing class. That way, you explicitly decide what happens — and Java avoids the diamond problem."
+                        ],
+                        topicExample: [
+                            "// Interface A",
+                            "interface A {",
+                            "   void show();",
+                            "}",
+                            "// Interface B",
+                            "interface B {",
+                            "   void show();",
+                            "}",
+                            "// Class C implements both interfaces",
+                            "class C implements A, B {",
+                            "   // Must override show() to resolve ambiguity",
+                            "   public void show() {",
+                            "       System.out.println('Custom show() in class C');",
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       C obj = new C();",
+                            "       obj.show(); // Works perfectly",
+                            "   }",
+                            "}",
+                            "Output :",
+                            "   Custom show() in class C"                  
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Hybrid Inheritance",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Hybrid Inheritance",
+                        topicContent: "Hybrid Inheritance is a combination of two or more types of inheritance. It forms a complex inheritance structure where different types are combined in one scenario.",
+                        topicPoints: [
+                            "Java does not support hybrid inheritance with classes because it would lead to the diamond problem (ambiguity).",
+                            "But it supports hybrid inheritance using interfaces."
+                        ],
+                        topicExample: [
+                            "interface A {",
+                            "   void methodA();",
+                            "}",
+                            "interface B extends A {",
+                            "   void methodB();",
+                            "}",
+                            "interface C extends A {",
+                            "   void methodC();",
+                            "}",
+                            "// Class D implements both B and C",
+                            "class D implements B, C {",
+                            "   public void methodA() {",
+                            "       System.out.println('methodA from A');",
+                            "   }",
+                            "   public void methodB() {",
+                            "       System.out.println('methodB from B');",
+                            "   }",
+                            "   public void methodC() {",
+                            "       System.out.println('methodC from C');",
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       D obj = new D();",
+                            "       obj.methodA();",
+                            "       obj.methodB();",
+                            "       obj.methodC();",
+                            "   }",
+                            "}",
+                            "Output :",
+                            "   methodA from A",  
+                            "   methodB from B",
+                            "   methodC from C"                        
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Hierarchical Inheritance",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Hierarchical Inheritance",
+                        topicContent: "A Single Parent or Super class is inherited by more than one Child class.",
+                        topicPoints: [
+                            "All child classes share the behavior from the parent.",
+                            "Each child can add its own specialized behavior.",
+                            "Promotes code reusability and organization.",
+                            "Easy to scale: Add new child classes without touching the base class."
+                        ]
+                    },{
+                        topicName: "Use Case",
+                        topicPoints: [
+                            "Class Shape with subclasses Circle, Rectangle, Square.",
+                            "Class Employee with subclasses Manager, Developer, Intern."
+                        ]
+                    },{
+                        topicName: "Example :",
+                        topicExample: [
+                            "// Parent class",
+                            "class Animal {",
+                            "   void eat() {",
+                            "       System.out.println('This animal eats food.');",
+                            "   }",
+                            "   void sleep() {",
+                            "       System.out.println('This animal sleeps.');",
+                            "   }",
+                            "}",
+                            "// First child class",
+                            "class Dog extends Animal {",
+                            "   void bark() {",
+                            "       System.out.println('The dog barks.');",
+                            "   }",
+                            "}",
+                            "// Second child class",
+                            "class Cat extends Animal {",
+                            "   void meow() {",
+                            "       System.out.println('The cat meows.'');",
+                            "   }",
+                            "}",
+                            "// Main class",
+                            "public class HierarchicalInheritanceExample {",
+                            "   public static void main(String[] args) {",
+                            "       Dog d = new Dog();",
+                            "       d.eat();",
+                            "       d.sleep();",
+                            "       d.bark();",
+                            "       System.out.println();",
+                            "       Cat c = new Cat();",
+                            "       c.eat();",
+                            "       c.sleep();",
+                            "       c.meow();",
+                            "   }",
+                            "}",
+                            "Output :",
+                            "   This animal eats food.",
+                            "   This animal sleeps.",
+                            "   The dog barks.",
+                            "   This animal eats food.",
+                            "   This animal sleeps.",
+                            "   The cat meows."
+                        ]
+                    }
+                ]
+            }
         }
     ];
 

@@ -7,7 +7,8 @@ const Content = () => {
     const topics = ["Variable", "Keywords", "Operator", "Control Statements", 
         "Decision-Making Statements","Looping Statements","Jump Statements",
         "Array","Types of Array","OOPS","Class","Constructor","Constructor Calling Chain",
-        "Method","Object","Inheritance","Single Inheritance","Multi-level Inheritance"];
+        "Method","Object","Inheritance","Single Inheritance","Multi-level Inheritance","Multiple Inheritance",
+        "Hybrid Inheritance","Hierarchical Inheritance"];
 
     const { topicsDetials } = useContext(TopicsContext);
 
@@ -43,16 +44,16 @@ const Content = () => {
             </div>
             <div className="content-container">
                 {topicsAndContents.mainContent.map((content, i) => (
-                    <div key={i} className='mt-1'>
-                        <h2>{content.topicName}</h2>
+                    <div key={i} className='mt-2'>
+                        <h3>{content.topicName}</h3>
                         <p>{content.topicContent}</p>
-                        <ul className='topic-points'>
+                        <ul className='topic-points mb-1'>
                             {content.topicPoints ? content.topicPoints.map((contentPoints, pointsIndex) => {
                                 return <li key={pointsIndex}>✅ {contentPoints}</li>
                             }) : ""}
                         </ul>
                         {content.topicExample ?
-                            <div className="card bg-dark text-white">
+                            <div className="card bg-dark text-white mb-1">
                                 <div className="card-body">
                                     <pre className="mb-0">
                                         <ul className='code-container'>
