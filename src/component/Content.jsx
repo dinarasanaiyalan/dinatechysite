@@ -8,7 +8,9 @@ const Content = () => {
         "Decision-Making Statements","Looping Statements","Jump Statements",
         "Array","Types of Array","OOPS","Class","Constructor","Constructor Calling Chain",
         "Method","Object","Inheritance","Single Inheritance","Multi-level Inheritance","Multiple Inheritance",
-        "Hybrid Inheritance","Hierarchical Inheritance"];
+        "Hybrid Inheritance","Hierarchical Inheritance","Encapsulation","Abstraction","Abstract Class",
+        "Interface","Upcasting"
+    ];
 
     const { topicsDetials } = useContext(TopicsContext);
 

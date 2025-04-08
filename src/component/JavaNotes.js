@@ -1297,6 +1297,310 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "Encapsulation",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Encapsulation",
+                        topicContent: "Encapsulation is the process of wrapping data (variables) and methods (functions) together into a single unit (i.e., a class). It’s often called data hiding, because it prevents direct access to the data fields from outside the class.",
+                        topicPoints: [
+                            "Data Protection – Prevents unauthorized access and modification of fields.",
+                            "Improved Security – Fields are made private and can only be accessed via public methods.",
+                            "Code Maintenance – You can change internal implementation without affecting outside code.",
+                            "Controlled Access – You decide which data is readable, writable, or read-only."
+                        ]
+                    },{
+                        topicName: "Example: Encapsulation",
+                        topicExample: [
+                            "class Student {",
+                            "   // 🔒 Private data members (hidden from outside)",
+                            "   private String name;",
+                            "   private int age;",
+                            "   // ✅ Public getter method",
+                            "   public String getName() {",
+                            "       return name;",
+                            "   }",
+                            "   // ✅ Public setter method",
+                            "   public void setName(String name) {",
+                            "       this.name = name;",
+                            "   }",
+                            "   // Getter for age",
+                            "   public int getAge() {",
+                            "       return age;",
+                            "   }",
+                            "   // Setter for age",
+                            "   public void setAge(int age) {",
+                            "       if (age > 0) {",
+                            "           this.age = age;",
+                            "       } else {",
+                            "           System.out.println('Age must be positive.');",
+                            "       }",
+                            "   }",
+                            "}",
+                            "public class Main {",
+                            "   public static void main(String[] args) {",
+                            "       Student s = new Student();",
+                            "       // Setting values via setters",
+                            "       s.setName('John');",
+                            "       s.setAge(20);",
+                            "       // Getting values via getters",
+                            "       System.out.println('Name: ' + s.getName());",
+                            "       System.out.println('Age: ' + s.getAge());",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Name: John",
+                            "   Age: 20"                            
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Abstraction",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Abstraction",
+                        topicContent: "It refers to the concept of hiding complex internal implementation details and showing only the necessary features of an object to the outside world. It creates a layer inbetween Business Logic and End-point",
+                        topicPoints: [
+                            "To reduce complexity in large systems by hiding irrelevant details.",
+                            "To provide a clear and simple interface to users of a class.",
+                            "To enhance code modularity and maintainability.",
+                            "To allow developers to focus on essential behavior rather than the implementation.",
+                            "To support loose coupling by minimizing dependencies between components."
+                        ]
+                    },{
+                        topicName: "When Should We Use Abstraction?",
+                        topicPoints: [
+                            "When building frameworks or reusable components where the internal logic should remain hidden.",
+                            "When multiple classes share common methods but differ in implementation.",
+                            "When designing APIs or SDKs where you only want users to interact with specific functionalities.",
+                            "When you want to ensure future scalability and make your application easier to modify or extend."
+                        ]
+                    },{
+                        topicName: "In Java we can achieve Abstraction in Two ways.",
+                        topicPoints: [
+                            "Abstract Class",
+                            "Interface"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Abstract Class",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Abstract Class",
+                        topicContent: "An abstract class in Java is a class that cannot be instantiated (you can't create objects of it). It is declared using the abstract keyword and is used to provide a base for subclasses to extend. It can include :",
+                        topicPoints: [
+                            "Abstract methods (methods without a body)",
+                            "Concrete (normal) methods (methods with body)",
+                            "Constructors",
+                            "Instance variables and static variables"
+                        ]
+                    },{
+                        topicName: "Key Rules of Abstract Class",
+                        topicPoints: [
+                            "Must be declared using the abstract keyword.",
+                            "Can contain both abstract and non-abstract methods.",
+                            "Can have constructors (called during subclass object creation). Still we can't create Object with it.",
+                            "Can have fields (variables).",
+                            "Cannot be instantiated directly.",
+                            "A subclass must implement all abstract methods unless the subclass is also abstract.",
+                            "Supports inheritance using extends keyword."
+                        ]
+                    },{
+                        topicName: "Example: Abstract Class",
+                        topicExample: [
+                            "//Abstract Class :",
+                            "//     by using this we can only achieve partial Abstraction,",
+                            "//     due to we can implement concrete or normal method in abstract class.",
+                            "abstract class SonyEnterprices {",
+                            "   // we can't give method body here",
+                            "   abstract void camera();",
+                            "   abstract void updatedCamera();",   
+                            "   void sonyOwnCamera() {",
+                            "       System.out.println('We can have own camera brand...');",
+                            "   }",   
+                            "   // we can't create object for abstract class, but we can create constructor,",
+                            "   // this constructor will execute once you create a object using upcasting.",
+                            "   SonyEnterprices(){",
+                            "       System.out.println('Constructor of Abstract Class SonyEnterprices...');",
+                            "   }",   
+                            "}",
+                            "class Iphone extends SonyEnterprices {",   
+                            "   @Override // it's only for indication purpose not an mandatory",
+                            "   void camera() {",
+                            "       System.out.println('Iphone using a Sony Camera....');",
+                            "   }",   
+                            "   void faceReg() {",
+                            "       System.out.println('Iphone add face unlock option...');",
+                            "   }",
+                            "   @Override",
+                            "   void updatedCamera() {",
+                            "       System.out.println('Now Iphone using Sony updated Camera...');",
+                            "   }",   
+                            "}",
+                            "public class AbstractClassExample {",   
+                            "   public static void main(String[] args) {",       
+                            "       //Upcasting - ",
+                            "       //   Assigning Child class object to an Parent class reference. ",
+                            "       //   By using this object we can only access parent class method's and variable's.",
+                            "       SonyEnterprices sony = new Iphone();",
+                            "       sony.camera();",
+                            "       sony.sonyOwnCamera();",
+                            "       //sony.faceReg();// we can't access child methods using upcasted object",       
+                            "   }",
+                            "}",
+                            "Output :",
+                            "   Constructor of Abstract Class SonyEnterprices...",
+                            "   Iphone using a Sony Camera....",
+                            "   We can have own camera brand..."    
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Interface",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Interface",
+                        topicContent: "An interface in Java is a completely abstract type used to define a contract that classes must follow. It contains method declarations without implementation(no body). If we want to provide implementation, we have to use inheritance and override that particular method in the inherited class. Interfaces help in achieving 100% abstraction and allow multiple inheritance (unlike classes).",
+                        topicPoints: [
+                            "Abstract methods (methods without a body)",
+                            "No Concrete (normal) methods.",
+                            "No Constructors.",
+                            "No Instance variables, only public static final variable.",
+                            "Can have static and default methods."
+                        ]
+                    },{
+                        topicName: "Key Rules of Interface",
+                        topicPoints: [
+                            "Declared using the interface keyword instead of class.",
+                            "All methods are public and abstract by default (till Java 7).",
+                            "From Java 8 onward, interfaces can have: Default methods, Static methods",
+                            "From Java 9, interfaces can also have private methods.",
+                            "Variables in interfaces are by default: public static final.",
+                            "A class implements an interface using the implements keyword.",
+                            "A class can implement multiple interfaces."
+                        ]
+                    },{
+                        topicName: "Example : Interface",
+                        topicExample: [
+                            "// By using Interface we can achieve 100% Abstraction, because we can't create normal or concrete method.",
+                            "public interface InterfaceExample {",
+                            "   // Compiler will convert this variable into public static final",
+                            "   int a = 10;// public static final int a = 10;",
+                            "   public static final int b = 10;",
+                            "   // Compiler will convert this method into abstract method.",
+                            "   // To provide the definition we need to inherit this interface from a class and override the method.",
+                            "   public void add(int a, int b);// public abstract void add(int a, int b);",
+                            "   // To call this method we need Interface name only.",
+                            "   static void sub(int a, int b) {",
+                            "       System.out.println('Subtraction of '+a+' and '+b+' is : '+(a-b));",
+                            "   }",
+                            "   // To call this default method, we need to create object for the interface using Upcasting",
+                            "   default void print() {",
+                            "       System.out.println('Default method of Interface');",
+                            "   }",
+                            "}",
+                            "public class InterfaceInheritedClass implements InterfaceExample{",
+                            "   @Override",
+                            "   public void add(int a, int b) {",
+                            "       System.out.println('Addition of '+a+' and '+b+' is : '+(a+b));",
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       //Upcasting",
+                            "       InterfaceExample inter = new InterfaceInheritedClass();",
+                            "       // To access default and abstract method - we need that interface object.",
+                            "       inter.add(a, b); // abstract method",
+                            "       inter.print(); // default method",
+                            "       // To access static method and static variable - we need that interface name only",
+                            "       InterfaceExample.sub(20,10); // static method",
+                            "       System.out.println('Interface variable a : '+InterfaceExample.a); // static variable",
+                            "       System.out.println('Interface variable b : '+InterfaceExample.b); // static variable",
+                            "   }",
+                            "}",
+                            "Output :",
+                            "  Addition of 10 and 10 is : 20",
+                            "  Default method of Interface",
+                            "  Subtraction of 20 and 10 is : 10",
+                            "  Interface variable a : 10",
+                            "  Interface variable b : 10"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Upcasting",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Upcasting",
+                        topicContent: "Upcasting is the process of assigning a subclass object to a superclass reference. In other words, when we cast a child class object to its parent class type, it's called upcasting.",
+                        topicPoints: [
+                            "Parent p = new Child(); // Implicit upcasting",
+                            "It happens automatically (implicitly), so you don’t need to explicitly write the cast."
+                        ]
+                    },{
+                        topicName: "Why is Upcasting Important?",
+                        topicPoints: [
+                            "Code Flexibility (Polymorphism): Allows writing generic code using the parent class/interface while executing the child class's method at runtime.",
+                            "Enables Dynamic Method Dispatch (Runtime Polymorphism): Methods are executed based on the actual object, not reference type.",
+                            "Decoupling Code: You can change the actual implementation (child class) without changing the code using the reference (parent class).",
+                            "Use in Frameworks & APIs: Commonly used in real-world applications and frameworks where superclass types are used in methods, and actual objects passed are subclasses."
+                        ]
+                    },{
+                        topicName: "When Do We Use Upcasting?",
+                        topicPoints: [
+                            "When using polymorphism.",
+                            "When a method accepts a parent class parameter, and we want to pass a subclass object.",
+                            "While working with arrays or collections of base type but containing subclass objects.",
+                            "When returning a generalized object type from a factory or method."
+                        ]
+                    },{
+                        topicName: "How Does Upcasting Work?",
+                        topicPoints: [
+                            "You can call only the methods/fields of the parent class, even though the object is of child type.",
+                            "If a method is overridden, the child class’s version is executed due to runtime polymorphism."
+                        ]
+                    },{
+                        topicName: "Example : Upcasting",
+                        topicExample: [
+                            "class Animal {",
+                            "   void sound() {",
+                            "       System.out.println('Animal makes sound');",
+                            "   }",
+                            "}",                            
+                            "class Dog extends Animal {",
+                            "   void sound() {",
+                            "       System.out.println('Dog barks');",
+                            "   }",
+                            "   void fetch() {",
+                            "       System.out.println('Dog fetches stick');",
+                            "   }",
+                            "}",
+                            "public class Main {",
+                            "   public static void main(String[] args) {",
+                            "       Animal a = new Dog(); // 🔼 Upcasting",
+                            "       a.sound();  // Output: Dog barks (runtime polymorphism)",
+                            "       // a.fetch(); ❌ Error: method not accessible via Animal reference",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Dog barks"
+                        ]
+                    }
+                ]
+            }
         }
     ];
 
