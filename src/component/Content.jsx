@@ -9,7 +9,7 @@ const Content = () => {
         "Array","Types of Array","OOPS","Class","Constructor","Constructor Calling Chain",
         "Method","Object","Inheritance","Single Inheritance","Multi-level Inheritance","Multiple Inheritance",
         "Hybrid Inheritance","Hierarchical Inheritance","Encapsulation","Abstraction","Abstract Class",
-        "Interface","Upcasting"
+        "Interface","Upcasting","DownCasting","String","Garbage Collection"
     ];
 
     const { topicsDetials } = useContext(TopicsContext);

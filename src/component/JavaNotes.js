@@ -1601,9 +1601,154 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "DownCasting",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "DownCasting",
+                        topicContent: "Downcasting is the process of converting a superclass reference back to a subclass type.  It is an explicit type conversion, and Must be done manually using a type cast.",
+                        topicPoints: [
+                            "Animal a = new Dog(); // Upcasting",
+                            "Dog d = (Dog) a;      // Downcasting",
+                            "Used when you want to access subclass-specific members from a superclass reference."
+                        ]
+                    },{
+                        topicName: "Characteristics of Downcasting",
+                        topicPoints: [
+                            "Requires explicit casting, otherwise it will result in a compile-time error.",
+                            "Unsafe if not handled properly — may throw ClassCastException at runtime if the object is not actually of the target subclass type.",
+                            "Best practice is to use instanceof to check the type before downcasting.",
+                            "Commonly used in object-oriented frameworks and collections where objects are referenced in their base type.",
+                            "With the Downcasted object we can call both the Super and Sub Class variables and methods.",
+                            "Becase Downcasting requires Upcasting, So upcasting provide the access to use Super Class variables and methods.",
+                            "With the Upcasting object only we are creating the Downcasting object, So Upcasting object had access of Super class mean while Downcasting object had access of Sub Class."
+                        ]
+                    },{
+                        topicName: "Example of DownCasting",
+                        topicExample: [
+                            "class Animal {",
+                            "   void sound() {",
+                            "       System.out.println('Animal sound');",
+                            "   }",
+                            "}",
+                            "class Dog extends Animal {",
+                            "   void bark() {",
+                            "       System.out.println('Dog barks');",
+                            "   }",
+                            "}",
+                            "public class Test {",
+                            "   public static void main(String[] args) {",
+                            "       Animal a = new Dog(); // Upcasting",
+                            "       if (a instanceof Dog) {",
+                            "           Dog d = (Dog) a;  // Downcasting",
+                            "           d.bark();         // Output: Dog barks",
+                            "       }",
+                            "   }",
+                            "}",  
+                            "Output : ",
+                            "   Dog barks"                       
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "String",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "String",
+                        topicContent: "In Java, a String is a sequence of characters. It is an object of the String class in java.lang package. Strings are immutable, meaning once created, their values cannot be changed. String have infinite memory of storage.",
+                        topicPoints: [
+                            `String name = "Java";`,
+                            "Internally stored as a String object",
+                            "We need to enclose the String in Double Quotes.",
+                            "String are immutable, means it can't be updated like primitive type, can only be re-initialized."
+                        ],
+                        topicExample: [
+                            "// Example of Immutability:",
+                            `String s = "Java";`,
+                            `s.concat(" Language");`,
+                            "System.out.println(s);  // Output: Java (not Java Language)",
+                        ]
+                    },{
+                        topicName: "Why do we use String?",
+                        topicPoints: [
+                            "Human-readable format: Strings are easy to read and write, making them ideal for passing data between systems.",
+                            "Universal format: APIs, web forms, databases, and network protocols often use strings to transmit data.",
+                            "Flexible data type: You can easily convert other types (like int, double, etc.) to and from strings.",
+                            "Supports parsing: Strings can be parsed and split for extracting structured data (like CSV, JSON, XML, etc.).",
+                            "Platform-independent: Strings in Java use Unicode, which supports characters from all languages."
+                        ]
+                    },{
+                        topicName: "How String Immutability Makes It Effective",
+                        topicPoints: [
+                            "Thread-Safe: Since strings are immutable, they can be safely shared across threads without synchronization.",
+                            "Memory Efficiency: Java uses a String Pool in the heap memory to store string literals. If two strings have the same value, they point to the same memory location, saving memory.",
+                            "Security: Used heavily in secure data like URLs, usernames, passwords because it can't be altered once created.",
+                            "Hashing Reliability: Strings are commonly used as keys in HashMaps. Their immutability ensures consistent hashcode, avoiding bugs.",
+                            "Predictable Behavior: Since their value doesn’t change, bugs related to accidental changes of string data are avoided."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Garbage Collection",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Garbage Collection",
+                        topicContent: "Garbage Collection (GC) in Java is the process of automatically reclaiming memory used by objects that are no longer referenced.",
+                        topicPoints: [
+                            "It is handled by the Java Virtual Machine (JVM).",
+                            "Java uses GC to free up heap memory, thus preventing memory leaks and improving application performance."
+                        ]
+                    },{
+                        topicName: "Why is Garbage Collection Needed?",
+                        topicPoints: [
+                            "To automatically manage memory (no need for manual memory deallocation like in C/C++).",
+                            "Prevent memory leaks by removing unreachable objects.",
+                            "Improve performance and avoid OutOfMemoryError.",
+                            "Helps make Java applications robust and safe by removing dead objects."
+                        ]
+                    },{
+                        topicName: "How Does it Work?",
+                        topicPoints: [
+                            "The JVM automatically tracks object references.",
+                            "If no part of your program is referencing an object, it becomes eligible for garbage collection.",
+                            "A background thread (Garbage Collector) will delete those unreachable objects and free up memory."
+                        ]
+                    },{
+                        topicName: "Example : ",
+                        topicExample: [
+                            "class Demo {",
+                            "   public void finalize() {",
+                            `       System.out.println("Object is garbage collected");`,
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       Demo d = new Demo();",
+                            "       d = null;  // Object becomes unreachable",
+                            "       System.gc(); // Suggests JVM to run garbage collection",
+                            "   }",
+                            "}"                            
+                        ]
+                    },{
+                        topicName: "Ways an Object Becomes Eligible for GC",
+                        topicPoints: [
+                            "Nullifying a reference: obj = null;",
+                            "Reassigning a reference: obj1 = new Object(); obj2 = obj1; obj1 = null;",
+                            "Objects created inside methods (go out of scope).",
+                            "Islands of isolation (two objects referring to each other but unreachable from the root)."
+                        ]
+                    }
+                ]
+            }
         }
     ];
-
+    
     return (
         <TopicsContext.Provider value={{ topicsDetials }}>
             {children}

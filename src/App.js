@@ -5,6 +5,7 @@ import Content from './component/Content';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Articles from './component/Articles';
 import { TopicsProvider } from './component/JavaNotes';
+import LandingPage from './component/LandingPage';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <div style={{ margin: '10px 20px' }}>
           <Router>
             <Header />
+            <LandingPage />
             <Routes>
               <Route path="/content" element={<Content />} />
               <Route path="/topic/:topicNameKey" element={<Content />} />
