@@ -15,8 +15,8 @@ function App() {
         <div style={{ margin: '10px 20px' }}>
           <Router>
             <Header />
-            <LandingPage />
             <Routes>
+              <Route path="*" element={<LandingPage />} />
               <Route path="/content" element={<Content />} />
               <Route path="/topic/:topicNameKey" element={<Content />} />
               <Route path="/articles" element={<Articles />} />

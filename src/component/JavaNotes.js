@@ -436,7 +436,7 @@ export const TopicsProvider = ({ children }) => {
                 ]
             }
         }, {
-            topicKey: "OOPS",
+            topicKey: "OOPs & Features",
             topicValue: {
                 whatYouGet: ['What it is?', 'Why we need this?', 'When we need to use?'],
                 mainContent: [
@@ -1742,6 +1742,445 @@ export const TopicsProvider = ({ children }) => {
                             "Reassigning a reference: obj1 = new Object(); obj2 = obj1; obj1 = null;",
                             "Objects created inside methods (go out of scope).",
                             "Islands of isolation (two objects referring to each other but unreachable from the root)."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Access Modifier",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Access Modifier",
+                        topicContent: "Access modifiers in Java are keywords that define the accessibility or scope of a class, method, variable, or constructor. They control which parts of a program can access these members. Java provides four main access modifiers: public, protected, default (also called package-private), and private.",
+                        topicPoints: [
+                            "public: The member is accessible from everywhere.",
+                            "protected: The member is accessible within the same package and also in subclasses (even if they are in different packages).",
+                            "default (no modifier specified): The member is accessible only within the same package.",
+                            "private: The member is accessible only within the same class."
+                        ]
+                    },{
+                        topicName: "Why we need Access Modifier?",
+                        topicPoints: [
+                            "Encapsulation: They help implement encapsulation by restricting access to sensitive data and methods, ensuring that only authorized parts of the program can interact with them.",
+                            "Security: By limiting access, they protect the internal state of an object from unintended or harmful modifications.",
+                            "Modularity: They promote modularity by defining clear boundaries between different parts of a program, making it easier to maintain and understand.",
+                            "Controlled Access: They allow developers to specify which classes or objects can use certain members, reducing the risk of errors and improving code reliability."
+                        ]
+                    },{
+                        topicName: "When to use Access Modifier?",
+                        topicPoints: [
+                            "Class Design: When defining a class, use access modifiers to control how its fields, methods, or constructors can be accessed by other classes.",
+                            "Data Protection: Use private for fields or methods that should not be exposed outside the class, such as internal logic or sensitive data.",
+                            "Inheritance: Use protected when you want methods or fields to be accessible in subclasses, especially in different packages.",
+                            "Package Organization: Use default (package-private) to restrict access to classes or members within the same package for better organization.",
+                            "Public APIs: Use public for methods or classes that form the public interface of a module or library, allowing external code to interact with them."
+                        ]
+                    },{
+                        topicName: "Example Code",
+                        topicExample: [
+                            "// Class with public access",
+                            "public class AccessModifierDemo {",
+                            "   // Private field",
+                            "   private int privateField = 10;",
+                            "   // Protected field",
+                            `   protected String protectedField = "Protected Data";`,
+                            "   // Default (package-private) field",
+                            "   double defaultField = 20.5;",
+                            "   // Public field",
+                            "   public boolean publicField = true;",
+                            "   // Private method",
+                            "   private void privateMethod() {",
+                            `       System.out.println("This is a private method.");`,
+                            "   }",
+                            "   // Protected method",
+                            "   protected void protectedMethod() {",
+                            `       System.out.println("This is a protected method.");`,
+                            "   }",
+                            "   // Default (package-private) method",
+                            "   void defaultMethod() {",
+                            `       System.out.println("This is a default method.");`,
+                            "   }",
+                            "   // Public method",
+                            "   public void publicMethod() {",
+                            `       System.out.println("This is a public method.");`,
+                            "   }",
+                            "}",
+                            "// Another class in the same package",
+                            "class TestSamePackage {",
+                            "   public static void main(String[] args) {",
+                            "       AccessModifierDemo demo = new AccessModifierDemo();",
+                            "       // Accessing members within the same package",
+                            "       System.out.println(demo.publicField);      // Accessible",
+                            "       System.out.println(demo.protectedField);   // Accessible",
+                            "       System.out.println(demo.defaultField);     // Accessible",
+                            "       // System.out.println(demo.privateField);  // Compilation error: not accessible",
+                            "       demo.publicMethod();    // Accessible",
+                            "       demo.protectedMethod(); // Accessible",
+                            "       demo.defaultMethod();   // Accessible",
+                            "       // demo.privateMethod(); // Compilation error: not accessible",
+                            "   }",
+                            "}"
+                        ]
+                    },{
+                        topicName: "Explanation of Example :",
+                        topicPoints: [
+                            "Private: privateField and privateMethod are only accessible within AccessModifierDemo. Attempts to access them from TestSamePackage result in a compilation error.",
+                            "Protected: protectedField and protectedMethod are accessible within the same package (TestSamePackage) and would also be accessible in subclasses outside the package.",
+                            "Default: defaultField and defaultMethod are accessible within the same package (com.example) but not outside it.",
+                            "Public: publicField and publicMethod are accessible from any class, regardless of the package."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Polymorphism",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Polymorphism",
+                        topicContent: "Polymorphism in Java is the ability of an object to take on many forms. It allows objects of different classes to be treated as objects of a common superclass or interface. The term 'polymorphism' means 'many shapes,' and in Java.Polymorphism is one of the core principles of Object-Oriented Programming (OOP) and is closely tied to inheritance and interfaces. It is primarily achieved through:",
+                        topicPoints: [
+                            "Method Overriding",
+                            "Method Overloading"
+                        ]
+                    },{
+                        topicName: "Why we need Polymorphism?",
+                        topicPoints: [
+                            "Flexibility: It allows different classes to be treated uniformly through a common interface or superclass, making code more adaptable to changes.",
+                            "Extensibility: New classes can be added with minimal changes to existing code, as long as they conform to the same interface or superclass.",
+                            "Code Reusability: By using a common interface or superclass, you can write code that works with multiple types without duplication.",
+                            "Maintainability: Polymorphism reduces tight coupling between classes, making it easier to modify or extend functionality.",
+                            "Abstraction: It enables developers to focus on the general behavior defined in superclasses or interfaces, hiding implementation details."
+                        ]
+                    },{
+                        topicName: "When to use Polymorphism?",
+                        topicPoints: [
+                            "Hierarchical Relationships: When you have a class hierarchy where subclasses share common behavior but need to provide specialized implementations (e.g., overriding methods).",
+                            "Common Interfaces: When multiple classes implement the same interface but provide different functionality, such as different data processing strategies.",
+                            "Code Generalization: When you want to write generic code that can work with objects of different types through a common superclass or interface.",
+                            "Dynamic Behavior: When the specific behavior of an object needs to be determined at runtime based on its actual type.",
+                            "Extensible Systems: When designing systems where new types can be added without modifying existing code (e.g., plugin architectures)."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Run-Time Polymorphism",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Run-Time Polymorphism",
+                        topicContent: "Run-time polymorphism is achieved through method overriding, where a subclass provides a specific implementation of a method defined in its superclass or interface. The method to be called is determined at runtime based on the actual type of the object, not the reference type.",
+                        topicPoints: [
+                            "Resolved at Runtime: The JVM decides which method to invoke based on the object’s actual type.",
+                            "Method Overriding: The subclass redefines a method with the same name, return type, and parameters as the superclass method.",
+                            "Inheritance or Interfaces: Requires an inheritance hierarchy or implementation of an interface.",
+                            "Dynamic Method Dispatch: The process where the JVM determines the method to call at runtime.",
+                            "Annotations: The @Override annotation ensures that a method is correctly overridden.",
+                            "Final and Static Methods: These cannot be overridden (final prevents overriding, and static methods belong to the class, not instances)."
+                        ],
+                        topicExample: [
+                            "// Superclass",
+                            "class Animal {",
+                            "   void makeSound() {",
+                            `       System.out.println("Some generic animal sound");`,
+                            "   }",
+                            "}",
+                            "// Subclass 1",
+                            "class Dog extends Animal {",
+                            "   @Override",
+                            "   void makeSound() {",
+                            `       System.out.println("Woof Woof");`,
+                            "   }",
+                            "}",
+                            "// Subclass 2",
+                            "class Cat extends Animal {",
+                            "   @Override",
+                            "   void makeSound() {",
+                            `       System.out.println("Meow Meow");`,
+                            "   }",
+                            "}",
+                            "// Main class to demonstrate runtime polymorphism",
+                            "public class PolymorphismDemo {",
+                            "   public static void main(String[] args) {",
+                            "       // Reference of type Animal, but object of type Dog",
+                            "       Animal myDog = new Dog();",
+                            "       // Reference of type Animal, but object of type Cat",
+                            "       Animal myCat = new Cat();",
+                            "       // Calls the overridden method based on the actual object type",
+                            "       myDog.makeSound(); // Output: Woof Woof",
+                            "       myCat.makeSound(); // Output: Meow Meow",
+                            "       // Using an array to demonstrate polymorphism",
+                            "       Animal[] animals = {new Dog(), new Cat()};",
+                            "       for (Animal animal : animals) {",
+                            "           animal.makeSound(); // Calls the appropriate method at runtime",
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            ""
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Compile-Time Polymorphism",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Compile-Time Polymorphism",
+                        topicContent: "Compile-time polymorphism is achieved through method overloading or constructor overloading, where multiple methods or constructors share the same name but differ in their parameter list (number, type, or order of parameters). The Java compiler determines which method to call based on the method signature at compile time.",
+                        topicPoints: [
+                            "Resolved at Compile Time: The compiler decides which method to invoke based on the arguments provided.",
+                            "Method Overloading: Methods in the same class have the same name but different parameter lists.",
+                            "No Inheritance Required: Overloading can occur within a single class.",
+                            "Return Type: The return type alone cannot differentiate overloaded methods; the parameter list must differ.",
+                            "Static Methods: Static methods can also be overloaded."
+                        ],
+                        topicExample: [
+                            "public class Calculator {",
+                            "   // Method overloading",
+                            "   public int add(int a, int b) {",
+                            "       return a + b;",
+                            "   }",
+                            "   public double add(double a, double b) {",
+                            "       return a + b;",
+                            "   }",
+                            "   public int add(int a, int b, int c) {",
+                            "       return a + b + c;",
+                            "   }",
+                            "   public static void main(String[] args) {",
+                            "       Calculator calc = new Calculator();",
+                            "       System.out.println(calc.add(5, 10));          // Calls add(int, int)",
+                            "       System.out.println(calc.add(5.5, 10.5));      // Calls add(double, double)",
+                            "       System.out.println(calc.add(1, 2, 3));        // Calls add(int, int, int)",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   15",
+                            "   16.0",
+                            "   6"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "String Buffer",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "String Buffer",
+                        topicContent: "StringBuffer is a mutable, thread-safe class in Java used to represent a sequence of characters. It is part of the java.lang package and was introduced to provide a way to modify strings efficiently, unlike the immutable String class. StringBuffer allows operations such as appending, inserting, deleting, and replacing characters without creating new objects for each modification.",
+                        topicPoints: [
+                            "Mutable: The content of a StringBuffer object can be changed.",
+                            "Thread-Safe: Its methods are synchronized, making it safe for use in multithreaded environments.",
+                            "Dynamic Capacity: It automatically grows its capacity when needed to accommodate additional characters."
+                        ]
+                    },{
+                        topicName: "Why we need StringBuffer?",
+                        topicContent: "StringBuffer is needed for the following reasons:",
+                        topicPoints: [
+                            "Efficiency: Unlike String, which creates a new object for every modification (due to immutability), StringBuffer modifies the same object, reducing memory overhead and improving performance.",
+                            "Thread Safety: Its synchronized methods ensure safe manipulation of character sequences in multithreaded applications, preventing data corruption.",
+                            "Flexibility: It provides methods to perform various string operations (e.g., append, insert, delete) directly on the buffer.",
+                            "Dynamic Growth: It handles dynamic string manipulation efficiently by expanding its capacity as needed, avoiding manual resizing."
+                        ]
+                    },{
+                        topicName: "When to use StringBuffer?",
+                        topicContent: "StringBuffer should be used in the following scenarios:",
+                        topicPoints: [
+                            "Frequent String Modifications: When a string undergoes multiple changes (e.g., appending or deleting characters in a loop), StringBuffer is more efficient than String.",
+                            "Multithreaded Environments: When thread safety is required, such as in concurrent applications where multiple threads modify the same string buffer.",
+                            "Building Strings Dynamically: When constructing strings incrementally, such as generating logs, reports, or formatted output.",
+                            "Legacy Code: In older Java applications where StringBuffer was used before StringBuilder (introduced in Java 5) became the preferred non-thread-safe alternative.",
+                        ],
+                        topicNote: "For single-threaded applications, StringBuilder is often preferred over StringBuffer because it is faster due to the lack of synchronization overhead."
+                    },{
+                        topicName: "How to use StringBuffer?",
+                        topicContent: "StringBuffer provides a variety of methods to manipulate character sequences. Below are common operations and examples demonstrating its usage. Key Methods of StringBuffer",
+                        topicPoints: [
+                            "append(): Adds data (e.g., String, int, char, etc.) to the end of the buffer.",
+                            "insert(): Inserts data at a specified index.",
+                            "delete(): Removes characters from a specified range.",
+                            "replace(): Replaces characters in a specified range with a new string.",
+                            "reverse(): Reverses the character sequence.",
+                            "substring(): Extracts a portion of the buffer as a string.",
+                            "capacity(): Returns the current capacity of the buffer.",
+                            "ensureCapacity(): Ensures the buffer has at least the specified capacity.",
+                            "length(): Returns the number of characters in the buffer.",
+                            "setLength(): Sets the length of the buffer, truncating or padding with null characters as needed."
+                        ]
+                    },{
+                        topicName: "Example Code",
+                        topicExample: [
+                            "public class StringBufferDemo {",
+                            "   public static void main(String[] args) {",
+                            "       // Create a StringBuffer object",
+                            `       StringBuffer sb = new StringBuffer("Hello");`,
+                            "       // Append data",
+                            `       sb.append(" World");`,
+                            `       System.out.println("After append: " + sb); // Hello World`,
+                            "       // Insert data",
+                            `       sb.insert(5, ",");`,
+                            `       System.out.println("After insert: " + sb); // Hello, World`,
+                            "       // Replace data",
+                            `       sb.replace(6, 11, "Java");`,
+                            `       System.out.println("After replace: " + sb); // Hello, Java`,
+                            "       // Delete data",
+                            "       sb.delete(5, 6);",
+                            `       System.out.println("After delete: " + sb); // Hello Java`,
+                            "       // Reverse the buffer",
+                            "       sb.reverse();",
+                            `       System.out.println("After reverse: " + sb); // avaJ olleH`,
+                            "       // Get substring",
+                            "       String substr = sb.substring(0, 4);",
+                            `       System.out.println("Substring: " + substr); // avaJ`,
+                            "       // Check length and capacity",
+                            `       System.out.println("Length: " + sb.length()); // 9`,
+                            `       System.out.println("Capacity: " + sb.capacity()); // Typically 21 (16 + initial 5)`,
+                            "       // Set new length",
+                            "       sb.setLength(5);",
+                            `       System.out.println("After setLength(5): " + sb); // avaJ `,
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   After append: Hello World",
+                            "   After insert: Hello, World",
+                            "   After replace: Hello, Java",
+                            "   After delete: Hello Java",
+                            "   After reverse: avaJ olleH",
+                            "   Substring: avaJ",
+                            "   Length: 9",
+                            "   Capacity: 21",
+                            "   After setLength(5): avaJ "
+                        ]
+                    },{
+                        topicName: "Explanation of Example",
+                        topicPoints: [
+                            "Initialization: A StringBuffer is created with the initial string 'Hello'. Its default capacity is 16 plus the length of the initial string (5), so 21.",
+                            "Append: ' World' is appended, modifying the buffer to 'Hello World'.",
+                            "Insert: A comma is inserted at index 5, resulting in 'Hello, World'.",
+                            "Replace: The substring 'World' (indices 6 to 11) is replaced with 'Java', yielding 'Hello, Java'.",
+                            "Delete: The comma at index 5 is deleted, resulting in 'Hello Java'.",
+                            "Reverse: The buffer is reversed to 'avaJ olleH'.",
+                            "Substring: The first four characters ('avaJ') are extracted as a String.",
+                            "Length and Capacity: The current length (9) and capacity (21) are displayed.",
+                            "Set Length: The buffer is truncated to 5 characters, resulting in 'avaJ '."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "String Builder",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "String Builder",
+                        topicContent: "StringBuilder is a mutable class in Java used to represent a sequence of characters that can be modified efficiently. It is part of the java.lang package and was introduced in Java 5 as a non-thread-safe alternative to StringBuffer. Unlike the immutable String class, StringBuilder allows operations such as appending, inserting, deleting, and replacing characters without creating new objects for each modification.",
+                        topicPoints: [
+                            "Mutable: The content of a StringBuilder object can be changed directly.",
+                            "Not Thread-Safe: Its methods are not synchronized, making it unsuitable for multithreaded environments but faster than StringBuffer.",
+                            "Dynamic Capacity: It automatically increases its capacity when needed to accommodate additional characters."
+                        ]
+                    },{
+                        topicName: "Why we need StringBuilder?",
+                        topicContent: "StringBuilder is needed for the following reasons:",
+                        topicPoints: [
+                            "Performance: It is more efficient than String for frequent modifications because it avoids creating multiple objects, reducing memory overhead and improving speed.",
+                            "Flexibility: It provides a variety of methods to manipulate strings (e.g., append, insert, delete) directly within the same object.",
+                            "Dynamic Growth: Its capacity expands automatically, making it suitable for building strings of unknown or variable length.",
+                            "Modern Alternative: It offers a faster alternative to StringBuffer in single-threaded applications, as it eliminates the overhead of synchronization."
+                        ]
+                    },{
+                        topicName: "When to use StringBuilder?",
+                        topicContent: "StringBuilder should be used in the following scenarios:",
+                        topicPoints: [
+                            "Frequent String Modifications: When a string undergoes multiple changes, such as in loops or iterative processes (e.g., building a large string incrementally).",
+                            "Single-Threaded Applications: When thread safety is not a concern, as StringBuilder is faster than StringBuffer due to the lack of synchronization.",
+                            "Dynamic String Construction: When generating strings dynamically, such as creating JSON, CSV, or formatted output.",
+                            "Performance-Critical Code: In scenarios where performance is a priority and string operations are a bottleneck.",
+                            "Replacing String Concatenation: When replacing inefficient String concatenation (e.g., str += 'text') in loops to avoid creating multiple String objects."
+                        ],
+                        topicNote: "Note: Use StringBuffer instead of StringBuilder if thread safety is required in multithreaded environments.",
+                    },{
+                        topicName: "How to use StringBuilder?",
+                        topicContent: "StringBuilder provides a rich set of methods to manipulate character sequences. Below are common operations and examples demonstrating its usage.",
+                        topicPoints: [
+                            "append(): Adds data (e.g., String, int, char, etc.) to the end of the builder.",
+                            "insert(): Inserts data at a specified index.",
+                            "delete(): Removes characters from a specified range.",
+                            "replace(): Replaces characters in a specified range with a new string.",
+                            "reverse(): Reverses the character sequence.",
+                            "substring(): Extracts a portion of the builder as a string.",
+                            "capacity(): Returns the current capacity of the builder.",
+                            "ensureCapacity(): Ensures the builder has at least the specified capacity.",
+                            "length(): Returns the number of characters in the builder.",
+                            "setLength(): Sets the length of the builder, truncating or padding with null characters as needed.",
+                            "toString(): Converts the StringBuilder content to a String."
+                        ]                       
+                    },{
+                        topicName: "Example code",
+                        topicExample: [
+                            "public class StringBuilderDemo {",
+                            "   public static void main(String[] args) {",
+                            "       // Create a StringBuilder object",
+                            `       StringBuilder sb = new StringBuilder("Hello");`,
+                            "       // Append data",
+                            `       sb.append(" World");`,
+                            `       System.out.println("After append: " + sb); // Hello World`,
+                            "       // Insert data",
+                            `       sb.insert(5, ",");`,
+                            `       System.out.println("After insert: " + sb); // Hello, World`,
+                            "       // Replace data",
+                            `       sb.replace(6, 11, "Java");`,
+                            `       System.out.println("After replace: " + sb); // Hello, Java`,
+                            "       // Delete data",
+                            "       sb.delete(5, 6);",
+                            `       System.out.println("After delete: " + sb); // Hello Java`,
+                            "       // Reverse the builder",
+                            "       sb.reverse();",
+                            `       System.out.println("After reverse: " + sb); // avaJ olleH`,
+                            `       // Get substring`,
+                            "       String substr = sb.substring(0, 4);",
+                            `       System.out.println("Substring: " + substr); // avaJ`,
+                            "       // Check length and capacity",
+                            `       System.out.println("Length: " + sb.length()); // 9`,
+                            `       System.out.println("Capacity: " + sb.capacity()); // Typically 21 (16 + initial 5)`,
+                            "       // Set new length",
+                            "       sb.setLength(5);",
+                            `       System.out.println("After setLength(5): " + sb); // avaJ `,
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   After append: Hello World",
+                            "   After insert: Hello, World",
+                            "   After replace: Hello, Java",
+                            "   After delete: Hello Java",
+                            "   After reverse: avaJ olleH",
+                            "   Substring: avaJ",
+                            "   Length: 9",
+                            "   Capacity: 21",
+                            "   After setLength(5): avaJ "
+                        ]
+                    },{
+                        topicName: "Explanation of Example",
+                        topicPoints: [
+                            "Initialization: A StringBuilder is created with the initial string 'Hello'. Its default capacity is 16 plus the length of the initial string (5), so 21.",
+                            "Append: ' World' is appended, modifying the builder to 'Hello World'.",
+                            "Insert: A comma is inserted at index 5, resulting in 'Hello, World'.",
+                            "Replace: The substring 'World' (indices 6 to 11) is replaced with 'Java', yielding 'Hello, Java'.",
+                            "Delete: The comma at index 5 is deleted, resulting in 'Hello Java'.",
+                            "Reverse: The builder is reversed to 'avaJ olleH'.",
+                            "Substring: The first four characters ('avaJ') are extracted as a String.",
+                            "Length and Capacity: The current length (9) and capacity (21) are displayed.",
+                            "Set Length: The builder is truncated to 5 characters, resulting in 'avaJ '."
                         ]
                     }
                 ]
