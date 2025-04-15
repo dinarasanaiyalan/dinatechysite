@@ -5,14 +5,6 @@ import { Accordion } from 'react-bootstrap';
 
 const Content = () => {
 
-    const topics = ["Variable", "Keywords", "Operator", "Control Statements",
-        "Decision-Making Statements", "Looping Statements", "Jump Statements",
-        "Array", "Types of Array", "OOPS", "Class", "Constructor", "Constructor Calling Chain",
-        "Method", "Object", "Inheritance", "Single Inheritance", "Multi-level Inheritance", "Multiple Inheritance",
-        "Hybrid Inheritance", "Hierarchical Inheritance", "Encapsulation", "Abstraction", "Abstract Class",
-        "Interface", "Upcasting", "DownCasting", "String", "Garbage Collection", "Access Modifier"
-    ];
-
     const topicList = [
         {
             topicName: "Basic's",
@@ -37,6 +29,9 @@ const Content = () => {
         }, {
             topicName: "String",
             subTopicList: ["String", "String Buffer", "String Builder"]
+        }, {
+            topicName: "Exception",
+            subTopicList: ["Exception","Exception Handling"]
         }
     ]
 
@@ -80,7 +75,7 @@ const Content = () => {
                                 return <li key={pointsIndex}>✅ {contentPoints}</li>
                             }) : ""}
                         </ul>
-                        {content.topicNote == undefined ? "" : <p> <strong>Note : </strong> {content.topicNote}</p>}
+                        {content.topicNote === undefined ? "" : <p> <strong>Note : </strong> {content.topicNote}</p>}
                         {content.topicExample ?
                             <div className="card bg-dark text-white mb-1">
                                 <div className="card-body">
