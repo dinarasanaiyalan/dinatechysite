@@ -2261,6 +2261,238 @@ export const TopicsProvider = ({ children }) => {
                             "throw Keyword: Explicitly throws an exception to signal an error condition.",
                             "throws Keyword: Declares that a method may throw one or more exceptions, used in method signatures for checked exceptions."
                           ]                          
+                    },{
+                        topicName: "Example 1: Basic Exception Handling",
+                        topicExample: [
+                            "public class BasicExceptionHandling {",
+                            "   public static void main(String[] args) {",
+                            "       try {",
+                            "           int result = divide(10, 0);",
+                            `           System.out.println("Result: " + result);`,
+                            "       } catch (ArithmeticException e) {",
+                            `           System.out.println("Error: Cannot divide by zero - " + e.getMessage());`,
+                            "       } finally {",
+                            `           System.out.println("Finally block executed.");`,
+                            "       }",
+                            "   }",
+                            "   public static int divide(int a, int b) {",
+                            "       return a / b; // Throws ArithmeticException if b is 0",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Error: Cannot divide by zero - / by zero",
+                            "   Finally block executed."
+                        ]
+                    },{
+                        topicName: "Explanation:",
+                        topicPoints: [
+                            "The try block attempts a division that throws an ArithmeticException.",
+                            "The catch block handles the exception and prints an error message.",
+                            "The finally block executes regardless, useful for cleanup tasks."
+                        ]
+                    },{
+                        topicName: "Example 2: Handling Multiple Exceptions",
+                        topicExample: [
+                            "import java.io.*;",
+                            "public class MultipleExceptionHandling {",
+                            "   public static void main(String[] args) {",
+                            "       try {",
+                            `           FileReader file = new FileReader("data.txt");`,
+                            "           int[] arr = new int[5];",
+                            "           System.out.println(arr[10]); // This line won't execute if file is missing",
+                            "       } catch (FileNotFoundException e) {",
+                            `           System.out.println("Error: File not found - " + e.getMessage());`,
+                            "       } catch (ArrayIndexOutOfBoundsException e) {",
+                            `           System.out.println("Error: Invalid array index - " + e.getMessage());`,
+                            "       } catch (Exception e) {",
+                            `           System.out.println("General error: " + e.getMessage());`,
+                            "       } finally {",
+                            `           System.out.println("Cleanup in finally block.");`,
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Error: File not found - data.txt (No such file or directory)",
+                            "   Cleanup in finally block."
+                        ]
+                    },{
+                        topicName: "Explanation:",
+                        topicPoints: [
+                            "The try block attempts file access and array access, both of which may throw exceptions.",
+                            "Specific catch blocks handle FileNotFoundException and ArrayIndexOutOfBoundsException.",
+                            "A general Exception catch block serves as a fallback.",
+                            "The finally block ensures cleanup."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Custom Exception",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Custom Exception",
+                        topicContent: "A  custom exception in Java is a user-defined exception class created to represent specific error conditions in an application. It extends either the Exception class (for checked exceptions) or the RuntimeException class (for unchecked exceptions), inheriting from the java.lang.Throwable hierarchy. Custom exceptions allow developers to define meaningful, application-specific errors with tailored names, messages, and behaviors, making error handling more precise and descriptive.",                 
+                    },{
+                        topicName: "Why we need Custom Exception?",
+                        topicContent: "Custom exceptions are needed for the following reasons:",
+                        topicPoints: [
+                            "Clarity: They provide descriptive names and messages that clearly indicate the specific error condition, improving code readability and debugging.",
+                            "Application-Specific Errors: They allow developers to define errors unique to the application’s domain, such as business rule violations or invalid states.",
+                            "Better Error Handling: They enable precise exception handling by distinguishing between different error types, avoiding reliance on generic exceptions like Exception.",
+                            "Maintainability: They make code more maintainable by encapsulating error logic in well-defined classes, facilitating updates and reuse.",
+                            "Improved User Experience: They allow meaningful error messages to be communicated to users, rather than cryptic or generic error descriptions.",
+                            "Type Safety: They leverage Java’s type system to ensure specific errors are caught and handled appropriately, reducing the risk of mishandling errors."
+                          ]                          
+                    },{
+                        topicName: "When to use Custom Exception?",
+                        topicContent: "Custom exceptions should be used in the following scenarios:",
+                        topicPoints: [
+                            "Domain-Specific Errors: When an application has unique error conditions tied to its business logic (e.g., InvalidOrderException in an e-commerce system).",
+                            "Business Rule Violations: When enforcing rules, such as minimum account balance, maximum file size, or invalid user input.",
+                            "Differentiated Error Handling: When you need to handle different errors in distinct ways (e.g., retry for one error, log for another).",
+                            "Improved Debugging: When generic exceptions (e.g., IllegalArgumentException) are too vague, and a specific exception provides better context.",
+                            "API Design: When creating libraries or APIs to provide clear error types for users to catch and handle.",
+                            "Consistency: When standardizing error handling across a large codebase to ensure uniformity in exception types and messages."
+                        ],
+                        topicNote: "Avoid creating custom exceptions for rare or one-off cases where standard exceptions (e.g., IllegalArgumentException, IOException) are sufficient."
+                    },{
+                        topicName: "Example: Custom Exception with throw and throws",
+                        topicExample: [
+                            "// Custom checked exception",
+                            "class InsufficientBalanceException extends Exception {",
+                            "   public InsufficientBalanceException(String message) {",
+                            "       super(message);",
+                            "   }",
+                            "}",
+                            "public class CustomExceptionHandling {",
+                            "   public static void main(String[] args) {",
+                            "       try {",
+                            "           withdraw(100, 50);",
+                            "       } catch (InsufficientBalanceException e) {",
+                            `           System.out.println("Error: " + e.getMessage());`,
+                            "       }",
+                            "   }",
+                            "   public static void withdraw(double balance, double amount) throws InsufficientBalanceException {",
+                            "       if (amount > balance) {",
+                            `           throw new InsufficientBalanceException("Insufficient balance: " + amount + " exceeds " + balance);`,
+                            "       } else {",
+                            `           System.out.println("Withdrawal successful: " + amount);`,
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Error: Insufficient balance: 50.0 exceeds 100.0"
+                        ]
+                    },{
+                        topicName: "Explanation:",
+                        topicPoints: [
+                            "A custom exception InsufficientBalanceException is defined by extending Exception.",
+                            "The withdraw method uses throws to declare it may throw the custom exception.",
+                            "The throw keyword creates and throws the exception if the condition is met.",
+                            "The try-catch block in main handles the exception."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Serialization",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Serialization",
+                        topicContent: "Serialization in Java is the process of converting an object’s state into a byte stream, which can be saved to a file, sent over a network, or stored in a database. The reverse process, called deserialization, reconstructs the object from the byte stream. Serialization is primarily facilitated by the java.io.Serializable interface, a marker interface that indicates a class can be serialized. Java’s serialization mechanism handles the conversion of an object’s fields, including primitive types and references to other objects, into a format that can be persisted or transmitted.",
+                        topicPoints: [
+                            "The serialized byte stream includes the object’s data, its class description, and metadata.",
+                            "Only objects of classes implementing Serializable (or Externalizable) can be serialized.",
+                            "Serialization is part of the java.io package, using classes like ObjectOutputStream and ObjectInputStream."
+                        ]                          
+                    },{
+                        topicName: "Why we need Serialization?",
+                        topicContent: "Serialization is needed for the following reasons:",
+                        topicPoints: [
+                            "Persistence: It allows objects to be saved to persistent storage (e.g., files, databases) for later retrieval, enabling state preservation across program executions.",
+                            "Network Communication: It enables objects to be transmitted over a network, such as in distributed systems, client-server applications, or remote method invocation (RMI).",
+                            "Interoperability: It provides a standard way to share object data between different Java applications or platforms.",
+                            "State Transfer: It facilitates transferring complex object graphs (e.g., objects with nested references) without manual conversion.",
+                            "Caching: It allows objects to be cached in serialized form for faster retrieval in applications like web servers or databases.",
+                            "Flexibility: It supports deep copying of objects and cloning by serializing and deserializing them.",
+                          ],                          
+                    },{
+                        topicName: "When to use Serialization?",
+                        topicContent: "Serialization should be used in the following scenarios:",
+                        topicPoints: [
+                            "Saving Object State: When you need to save an object’s state to a file or database for later use (e.g., saving game progress, user preferences).",
+                            "Distributed Systems: When objects need to be sent across a network in client-server applications, RMI, or messaging systems like JMS.",
+                            "Session Management: When storing session data in web applications (e.g., HTTP session objects in servlets).",
+                            "Caching: When caching objects in memory or disk to improve performance.",
+                            "Object Cloning: When creating deep copies of objects by serializing and deserializing them.",
+                            "Data Exchange: When sharing objects between different Java applications or systems that support Java serialization."
+                        ],
+                        topicNote: "Avoid serialization for sensitive data unless encrypted, as the byte stream can be intercepted or reverse-engineered. Consider alternatives like JSON or XML for cross-platform data exchange."           
+                    },{
+                        topicName: "How to use Serialization?",
+                        topicContent: "Serialization involves marking a class as Serializable and using ObjectOutputStream to serialize and ObjectInputStream to deserialize. Below are steps and examples.",
+                        topicPoints: [
+                            "Implement Serializable: The class must implement the java.io.Serializable interface. Non-serializable fields should be marked as transient to exclude them.",
+                            "Serialize the Object: Use ObjectOutputStream to write the object to a byte stream (e.g., file, network socket).",
+                            "Deserialize the Object: Use ObjectInputStream to read the byte stream and reconstruct the object.",
+                            "Handle Exceptions: Serialization may throw IOException, ClassNotFoundException, or NotSerializableException."
+                        ]
+                    },{
+                        topicName: "Example: Basic Serialization and Deserialization",
+                        topicExample: [
+                            "import java.io.*;",
+                            "class Employee implements Serializable {",
+                            "   private static final long serialVersionUID = 1L; // Recommended for version control",
+                            "   private String name;",
+                            "   private int id;",
+                            "   private transient String password; // Excluded from serialization",
+                            "   public Employee(String name, int id, String password) {",
+                            "       this.name = name;",
+                            "       this.id = id;",
+                            "       this.password = password;",
+                            "   }",
+                            "   @Override",
+                            "   public String toString() {",
+                            `       return "Employee{name='" + name + "', id=" + id + ", password=" + password + "}";`,
+                            "   }",
+                            "}",
+                            "public class SerializationDemo {",
+                            "   public static void main(String[] args) {",
+                            "       // Create an Employee object",
+                            `       Employee emp = new Employee("Alice", 101, "secret123");`,
+                            "       // Serialize the object",
+                            `       try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("employee.ser"))) {`,
+                            "           out.writeObject(emp);",
+                            `           System.out.println("Object serialized: " + emp);`,
+                            "       } catch (IOException e) {",
+                            `           System.out.println("Serialization error: " + e.getMessage());`,
+                            "       }",
+                            "       // Deserialize the object",
+                            `       try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("employee.ser"))) {`,
+                            "           Employee deserializedEmp = (Employee) in.readObject();",
+                            `           System.out.println("Object deserialized: " + deserializedEmp);`,
+                            "       } catch (IOException | ClassNotFoundException e) {",
+                            `           System.out.println("Deserialization error: " + e.getMessage());`,
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Object serialized: Employee{name='Alice', id=101, password=secret123}",
+                            "   Object deserialized: Employee{name='Alice', id=101, password=null}"
+                        ]
+                    },{
+                        topicName: "Explanation:",
+                        topicPoints: [
+                            "The Employee class implements Serializable.",
+                            "The password field is marked transient, so it’s excluded from serialization (set to null on deserialization).",
+                            "ObjectOutputStream serializes the object to a file (employee.ser).",
+                            "ObjectInputStream deserializes the file back into an object.",
+                            "serialVersionUID ensures compatibility during class changes."
+                          ]                          
                     }
                 ]
             }

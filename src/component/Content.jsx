@@ -31,7 +31,10 @@ const Content = () => {
             subTopicList: ["String", "String Buffer", "String Builder"]
         }, {
             topicName: "Exception",
-            subTopicList: ["Exception","Exception Handling"]
+            subTopicList: ["Exception","Exception Handling","Custom Exception"]
+        }, {
+            topicName: "Serialization",
+            subTopicList: ["Serialization"]
         }
     ]
 
