@@ -2496,7 +2496,70 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "File Handling",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "File Handling",
+                        topicContent: "File handling in Java refers to the process of creating, reading, writing, updating, and deleting files on a storage device (e.g., hard disk, SSD). It involves interacting with files and directories using classes from the java.io and java.nio.file packages. File handling allows programs to persist data, read configuration files, log information, or manage file-based resources. Java provides multiple APIs for file operations:",
+                        topicPoints: [
+                            "java.io: Includes classes like File, FileReader, FileWriter, BufferedReader, BufferedWriter, and streams (FileInputStream, FileOutputStream) for basic file operations.",
+                            "java.nio.file: Introduced in Java 7, provides a more modern and flexible API with classes like Path, Paths, Files, and FileSystem for advanced file handling, including file attributes and directory operations."
+                        ],
+                        topicNote: "File handling supports both text and binary files and includes mechanisms for handling exceptions, as file operations are prone to errors (e.g., file not found, permission issues)."
+                    },{
+                        topicName: "Why we need File Handling?",
+                        topicContent: "File handling is essential for the following reasons:",
+                        topicPoints: [
+                            "Data Persistence: It allows programs to store data permanently on disk, enabling data to be reused across program executions (e.g., saving user settings, logs).",
+                            "Data Exchange: It facilitates reading and writing data to files for sharing between applications or systems (e.g., CSV, JSON files).",
+                            "Configuration Management: It enables programs to read configuration settings from files, making applications customizable without code changes.",
+                            "Logging: It supports writing logs to files for debugging, auditing, or monitoring application behavior.",
+                            "Resource Management: It allows interaction with external resources like files or directories, critical for many applications (e.g., processing uploaded files in web apps).",
+                            "Backup and Recovery: It enables creating backups of data or restoring data from files, ensuring data integrity.",
+                        ]                          
+                    },{
+                        topicName: "When to use File Handling?",
+                        topicContent: "File handling should be used in the following scenarios:",
+                        topicPoints: [
+                            "Storing Application Data: When you need to save user data, game progress, or application state to a file (e.g., a text file for notes, a binary file for serialized objects).",
+                            "Reading External Data: When processing data from files, such as configuration files, CSV datasets, or log files.",
+                            "Logging Events: When recording application events or errors to a log file for debugging or auditing.",
+                            "File-Based Communication: When applications exchange data via files (e.g., exporting reports, importing user data).",
+                            "Managing File Systems: When creating, deleting, or modifying files and directories (e.g., organizing user-uploaded files in a web application).",
+                            "Batch Processing: When reading or writing large datasets in batch processes, such as processing transaction logs or generating reports.",
+                        ],
+                        topicNote: "For large-scale or high-performance file operations, consider java.nio.file for its efficiency and modern features. For database-driven applications, prefer databases over files for structured data storage."                          
+                    },{
+                        topicName: "Example: File Handling",
+                        topicExample: [
+                            "import java.io.File;",
+                            "public class FileHandling {",
+                            "   public static void main(String[] args){",
+                            `       File file = new File("D://Sample/Student.txt");`,
+                            `       System.out.println("canExecute() - To check we can Execute(works with) or not :  "+file.canExecute());`,
+                            `       System.out.println("getAbsolutePath() - To get the path of the file :  "+file.getAbsolutePath());`,
+                            `       System.out.println("getName() - To get the name of the file :  "+file.getName());`,
+                            `       System.out.println("canRead() - To check we can read that file :  "+file.canRead());`,
+                            `       System.out.println("canWrite() - To check we can write that file :  "+file.canWrite());`,
+                            `       System.out.println("exists() - To check the file is their or not :  "+file.exists());`,
+                            `   }`,
+                            "}",
+                            "Output : ",
+                            "   canExecute() - To check we can Execute(works with) or not :  true",
+                            "   getAbsolutePath() - To get the path of the file :  D:\\Sample\\Student.txt",
+                            "   getName() - To get the name of the file :  Student.txt",
+                            "   canRead() - To check we can read that file :  true",
+                            "   canWrite() - To check we can write that file :  true",
+                            "   exists() - To check the file is their or not :  true"
+                        ]
+                    }
+                ]
+            }
         }
+
     ];
     
     return (
