@@ -34,12 +34,28 @@ const Content = () => {
             subTopicList: ["Exception","Exception Handling","Custom Exception"]
         }, {
             topicName: "File",
-            subTopicList: ["File Handling"]
+            subTopicList: ["File Handling","File Reading","File Writing","File Deletion"]
         }, {
             topicName: "Serialization",
             subTopicList: ["Serialization"]
         }
     ]
+
+    const javaKeywords = [
+        "abstract", "assert", "boolean", "break", "byte",
+        "case", "catch", "char", "class", "const",
+        "continue", "default", "do", "double", "else",
+        "enum", "extends", "final", "finally", "float",
+        "for", "goto", "if", "implements", "import",
+        "instanceof", "int", "interface", "long", "native",
+        "new", "package", "private", "protected", "public",
+        "return", "short", "static", "strictfp", "super",
+        "switch", "synchronized", "this", "throw", "throws",
+        "transient", "try", "void", "volatile", "while",
+        "null", "true", "false", // technically literals, not keywords
+        "open", "module", "requires", "exports", "opens",
+        "to", "uses", "provides", "with", "transitive"
+      ];      
 
     const { topicsDetials } = useContext(TopicsContext);
 
@@ -48,6 +64,16 @@ const Content = () => {
     const topicDetails = topicNameKey !== undefined ? topicsDetials.find((t) => t.topicKey === topicNameKey) :
         topicsDetials.find((t) => t.topicKey === "Variable");
     const topicsAndContents = topicDetails ? topicDetails.topicValue : null;
+
+    const highlightJavaKeywords = (codeLine) => {
+        const regex = new RegExp(`\\b(${javaKeywords.join('|')})\\b`, 'g');
+        return codeLine.split(regex).map((part, index) => {
+          if (javaKeywords.includes(part)) {
+            return <span key={index} style={{ color: 'blue', fontWeight: 'bold' }}>{part}</span>;
+          }
+          return part;
+        });
+      };
 
     return (
         <div className='main-container'>
@@ -88,7 +114,7 @@ const Content = () => {
                                     <pre className="mb-0">
                                         <ul className='code-container'>
                                             {content.topicExample.map((example, exampleIndex) => {
-                                                return <li key={exampleIndex}>{example}</li>
+                                                return <li key={exampleIndex}>{highlightJavaKeywords(example)}</li>
                                             })}
                                         </ul>
                                     </pre>

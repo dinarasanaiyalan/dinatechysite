@@ -2558,6 +2558,161 @@ export const TopicsProvider = ({ children }) => {
                     }
                 ]
             }
+        }, {
+            topicKey: "File Reading",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "File Reading",
+                        topicContent: "File reading in Java refers to the process of retrieving data from a file stored on a storage device (e.g., hard disk, SSD). It involves accessing the file’s contents, which can be text (e.g., .txt, .csv) or binary data (e.g., .bin, .jpg), and processing them in a Java program. Java provides multiple APIs for file reading, primarily through the java.io and java.nio.file packages. These APIs support reading files as streams of characters or bytes, line-by-line, or in their entirety, with mechanisms to handle errors like file not found or permission issues.",
+                        topicPoints: [
+                            "Use File or Path to represent the file.",
+                            "BufferedReader: Efficiently reads text lines with buffering.",
+                            "Verify the file exists and is readable using File.exists() or Files.isReadable().",
+                            "Use BufferedReader for text files (line-by-line or entire file).",
+                            "File reading may throw IOException, FileNotFoundException, or SecurityException. Use try-catch.",
+                            "Use try-with-resources (Java 7+) to automatically close streams, or manually call close() in a finally block."
+                        ]
+                    },{
+                        topicName: "Example: Reading a Text File with BufferedReader (java.io)",
+                        topicExample: [
+                            "import java.io.*;",
+                            "public class BufferedReaderDemo {",
+                            "   public static void main(String[] args) {",
+                            `       File file = new File("input.txt");`,
+                            "       try (BufferedReader reader = new BufferedReader(new FileReader(file))) {",
+                            "           String line;",
+                            `           System.out.println("Reading file contents:");`,
+                            "           while ((line = reader.readLine()) != null) {",
+                            "               System.out.println(line);",
+                            "           }",
+                            "       } catch (FileNotFoundException e) {",
+                            `           System.out.println("Error: File not found - " + e.getMessage());`,
+                            "       } catch (IOException e) {",
+                            `           System.out.println("Error reading file: " + e.getMessage());`,
+                            "       }",
+                            "   }",
+                            "}",
+                            "Content inside the File : input.txt ",
+                            "   Hello, Java!",
+                            "   This is a sample text file.",
+                            "   Line 3",
+                            "Output : ",
+                            "   Reading file contents:",
+                            "   Hello, Java!",
+                            "   This is a sample text file.",
+                            "   Line 3"
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "File Writing",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "File Writing",
+                        topicContent: "File writing in Java refers to the process of creating or modifying a file on a storage device (e.g., hard disk, SSD) by writing data to it. The data can be text (e.g., .txt, .csv) or binary (e.g., .bin, .jpg). Java provides APIs for file writing through the java.io and java.nio.file packages, allowing programs to save data, generate logs, export reports, or create configuration files. File writing operations include creating new files, overwriting existing files, or appending data, with support for handling errors like permission issues or disk full conditions.",
+                        topicPoints: [
+                            "Use File or Path to represent the file.",
+                            "FileWriter: Writes character streams to text files.",
+                            "BufferedWriter: Efficiently writes text with buffering to reduce I/O operations.",
+                            "Use BufferedWriter or PrintWriter for text files.",
+                            "File writing may throw IOException, SecurityException, or FileNotFoundException. Use try-catch.",
+                            "Use try-with-resources (Java 7+) to automatically close streams, or manually call close() in a finally block."
+                        ]
+                    },{
+                        topicName: "Example: Writing a Text File with BufferedWriter (java.io)",
+                        topicExample: [
+                            "import java.io.*;",
+                            "public class BufferedWriterDemo {",
+                            "   public static void main(String[] args) {",
+                            `       File file = new File("output.txt");`,
+                            "       // Writing to a file (overwrite mode)",
+                            "       try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {",
+                            `           writer.write("Hello, Java File Writing!");`,
+                            "           writer.newLine();",
+                            `           writer.write("This is a sample text file.");`,
+                            `           System.out.println("File written successfully.");`,
+                            "       } catch (IOException e) {",
+                            `           System.out.println("Error writing file: " + e.getMessage());`,
+                            "       }",
+                            "       // Appending to the same file",
+                            "       try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {",
+                            "           writer.newLine();",
+                            `           writer.write("Appended line.");`,
+                            `           System.out.println("File appended successfully.");`,
+                            `       } catch (IOException e) {`,
+                            `           System.out.println("Error appending file: " + e.getMessage());`,
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output File (output.txt):",
+                            "   Hello, Java File Writing!",
+                            "   This is a sample text file.",
+                            "   Appended line.",
+                            "Output : ",
+                            "   File written successfully.",
+                            "   File appended successfully."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "File Deletion",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "File Deletion",
+                        topicContent: "File deletion in Java refers to the process of removing a file or directory from a storage device (e.g., hard disk, SSD). It is a critical file handling operation used to manage disk space, clean up temporary files, or remove obsolete data. Java provides methods for file deletion through the java.io and java.nio.file packages, primarily using the File class and Files class. File deletion operations must handle potential errors, such as file not found, permission issues, or non-empty directories, and ensure safe execution to avoid unintended data loss.",
+                        topicPoints: [
+                            "Use File or Path to represent the file.",
+                            "delete(): Deletes a file or empty directory, returning true if successful.",
+                            "deleteOnExit(): Schedules a file or directory for deletion when the JVM terminates.",
+                            "Use File.delete() or Files.delete() for immediate deletion.",
+                            "Use Files.deleteIfExists() for safer deletion (no exception if file doesn’t exist).",
+                            "Use File.deleteOnExit() for deferred deletion.",
+                            "Check the return value of delete() or deleteIfExists(), or catch exceptions to confirm success.",
+                            "File writing may throw IOException, SecurityException, or FileNotFoundException. Use try-catch.",
+                            "Use try-with-resources (Java 7+) to automatically close streams, or manually call close() in a finally block."
+                        ]
+                    },{
+                        topicName: "Example: Deleting a File with java.io.File",
+                        topicExample: [
+                            "import java.io.*;",
+                            "public class FileDeleteDemo {",
+                            "   public static void main(String[] args) {",
+                            `       File file = new File("temp.txt");`,
+                            "       // Create a sample file for demonstration",
+                            "       try (FileWriter writer = new FileWriter(file)) {",
+                            `           writer.write("This is a temporary file.");`,
+                            `           System.out.println("Sample file created: " + file.getName());`,
+                            "       } catch (IOException e) {",
+                            `           System.out.println("Error creating file: " + e.getMessage());`,
+                            "       }",
+                            "       // Delete the file",
+                            "       if (file.exists()) {",
+                            "           boolean deleted = file.delete();",
+                            "           if (deleted) {",
+                            `               System.out.println("File deleted successfully: " + file.getName());`,
+                            "           } else {",
+                            `               System.out.println("Failed to delete file: " + file.getName());`,
+                            "           }",
+                            "       } else {",
+                            `           System.out.println("File does not exist: " + file.getName());`,
+                            "       }",
+                            "   }",
+                            "}",
+                            "Output : ",
+                            "   Sample file created: temp.txt",
+                            "   File deleted successfully: temp.txt"
+                        ]
+                    }
+                ]
+            }
         }
 
     ];
