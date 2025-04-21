@@ -38,6 +38,9 @@ const Content = () => {
         }, {
             topicName: "Serialization",
             subTopicList: ["Serialization"]
+        }, {
+            topicName: "Collection",
+            subTopicList: ["Iterator","Collection","List Interface"]
         }
     ]
 
@@ -54,7 +57,13 @@ const Content = () => {
         "transient", "try", "void", "volatile", "while",
         "null", "true", "false", // technically literals, not keywords
         "open", "module", "requires", "exports", "opens",
-        "to", "uses", "provides", "with", "transitive"
+        "to", "uses", "provides", "with", "transitive",
+        "Collections","System","out","println","ArrayList",
+        "LinkedList","Vector","Stack","Map","Set","Map",
+        "HashMap","LinkedHashMap","TreeMap","HashSet",
+        "LinkedHashMap","TreeMap","Queue","PriorityQueue",
+        "ArrayDeque","List","Integer","Byte","Short",
+        "Long","Float","Double","Character","Boolean"
       ];      
 
     const { topicsDetials } = useContext(TopicsContext);
