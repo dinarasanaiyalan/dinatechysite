@@ -1298,66 +1298,6 @@ export const TopicsProvider = ({ children }) => {
                 ]
             }
         }, {
-            topicKey: "Encapsulation",
-            topicValue: {
-                whatYouGet: "",
-                mainContent: [
-                    {
-                        topicName: "Encapsulation",
-                        topicContent: "Encapsulation is the process of wrapping data (variables) and methods (functions) together into a single unit (i.e., a class). It’s often called data hiding, because it prevents direct access to the data fields from outside the class.",
-                        topicPoints: [
-                            "Data Protection – Prevents unauthorized access and modification of fields.",
-                            "Improved Security – Fields are made private and can only be accessed via public methods.",
-                            "Code Maintenance – You can change internal implementation without affecting outside code.",
-                            "Controlled Access – You decide which data is readable, writable, or read-only."
-                        ]
-                    },{
-                        topicName: "Example: Encapsulation",
-                        topicExample: [
-                            "class Student {",
-                            "   // 🔒 Private data members (hidden from outside)",
-                            "   private String name;",
-                            "   private int age;",
-                            "   // ✅ Public getter method",
-                            "   public String getName() {",
-                            "       return name;",
-                            "   }",
-                            "   // ✅ Public setter method",
-                            "   public void setName(String name) {",
-                            "       this.name = name;",
-                            "   }",
-                            "   // Getter for age",
-                            "   public int getAge() {",
-                            "       return age;",
-                            "   }",
-                            "   // Setter for age",
-                            "   public void setAge(int age) {",
-                            "       if (age > 0) {",
-                            "           this.age = age;",
-                            "       } else {",
-                            "           System.out.println('Age must be positive.');",
-                            "       }",
-                            "   }",
-                            "}",
-                            "public class Main {",
-                            "   public static void main(String[] args) {",
-                            "       Student s = new Student();",
-                            "       // Setting values via setters",
-                            "       s.setName('John');",
-                            "       s.setAge(20);",
-                            "       // Getting values via getters",
-                            "       System.out.println('Name: ' + s.getName());",
-                            "       System.out.println('Age: ' + s.getAge());",
-                            "   }",
-                            "}",
-                            "Output : ",
-                            "   Name: John",
-                            "   Age: 20"                            
-                        ]
-                    }
-                ]
-            }
-        }, {
             topicKey: "Abstraction",
             topicValue: {
                 whatYouGet: "",
@@ -2893,6 +2833,129 @@ export const TopicsProvider = ({ children }) => {
                             "IndexOutOfBoundsException: Invalid index for get, set, add, or remove.",
                             "ConcurrentModificationException: Modifying a list during iteration (except via Iterator).",
                             "UnsupportedOperationException: Modifying an unmodifiable list (e.g., Arrays.asList)."
+                        ]
+                    }
+                ]
+            }
+        }, {
+            topicKey: "Encapsulation",
+            topicValue: {
+                whatYouGet: "",
+                mainContent: [
+                    {
+                        topicName: "Encapsulation",
+                        topicContent: "Encapsulation is a fundamental principle of Object-Oriented Programming (OOP) in Java that involves bundling data (fields) and methods that operate on that data within a single unit, typically a class, while restricting direct access to the data. It is achieved by using access modifiers (e.g., private) to hide internal details and providing controlled access through public methods (getters and setters).",
+                    },{
+                        topicName: "Key Features:",
+                        topicPoints: [
+                            "Data Hiding: Fields are declared private to prevent direct access.",
+                            "Controlled Access: Public getters/setters provide access to private fields.",
+                            "Single Unit: Data and methods are encapsulated within a class.",
+                            "Security: Protects data integrity by enforcing validation in methods."
+                        ]
+                    },{
+                        topicName: "Why Use Encapsulation?",
+                        topicPoints: [
+                            "Data Protection: Prevents unauthorized or invalid modifications to object state.",
+                            "Modularity: Groups related data and behavior, improving code organization.",
+                            "Flexibility: Allows internal implementation changes without affecting external code.",
+                            "Maintainability: Simplifies debugging and updates by controlling access points.",
+                            "Reusability: Encapsulated classes can be reused with consistent interfaces."
+                        ]
+                    },{
+                        topicName: "When to Use?",
+                        topicPoints: [
+                            "Sensitive Data: To protect fields like passwords, account balances, or personal info.",
+                            "Validation: To enforce business rules (e.g., age > 0) during data modification.",
+                            "API Design: To expose a stable interface while hiding implementation details.",
+                            "Complex Classes: To manage internal state in classes with multiple fields/methods."
+                        ],
+                        topicNote: "Avoid: For simple data structures with no behavior or validation (e.g., DTOs)."
+                    },{
+                        topicName: "How to Use?",
+                        topicContent: "Encapsulation is implemented by:",
+                        topicPoints: [
+                            "Declaring fields as private to restrict direct access.",
+                            "Providing public getter (to read) and setter (to write) methods.",
+                            "Adding validation logic in setters (if needed).",
+                            "Using a class to bundle fields and methods."
+                        ]
+                    },{
+                        topicName: "Example: Encapsulated Class",
+                        topicExample: [
+                            "public class Employee {",
+                            "   // Private fields",
+                            "   private String name;",
+                            "   private int age;",
+                            "   private double salary;",
+                            "   // Public getter for name",
+                            "   public String getName() {",
+                            "       return name;",
+                            "   }",
+                            "   // Public setter for name with validation",
+                            "   public void setName(String name) {",
+                            "        if (name != null && !name.trim().isEmpty()) {",
+                            "            this.name = name;",
+                            "        } else {",
+                            `           throw new IllegalArgumentException("Name cannot be null or empty");`,
+                            "       }",
+                            "   }",
+                            "   // Public getter for age",
+                            "   public int getAge() {",
+                            "        return age;",
+                            "   }",
+                            "   // Public setter for age with validation",
+                            "   public void setAge(int age) {",
+                            "        if (age >= 18 && age <= 65) {",
+                            "            this.age = age;",
+                            "        } else {",
+                            `            throw new IllegalArgumentException("Age must be between 18 and 65");`,
+                            "       }",
+                            "   }",
+                            "   // Public getter for salary",
+                            "   public double getSalary() {",
+                            "        return salary;",
+                            "   }",
+                            "   // Public setter for salary with validation",
+                            "   public void setSalary(double salary) {",
+                            "      if (salary >= 0) {",
+                            "           this.salary = salary;",
+                            "      } else {",
+                            `         throw new IllegalArgumentException("Salary cannot be negative");`,
+                            "       }",
+                            "   }",
+                            "}"
+                        ]
+                    },{
+                        topicName: "Example: Using the Encapsulated Class",
+                        topicExample: [
+                            "public class Main {",
+                            "    public static void main(String[] args) {",
+                            "        Employee emp = new Employee();",
+                            "        // Set values using setters",
+                            `        emp.setName("Alice");`,
+                            "        emp.setAge(30);",
+                            "        emp.setSalary(50000);",
+                            "        // Get values using getters",
+                            `        System.out.println("Name: " + emp.getName());`,
+                            `        System.out.println("Age: " + emp.getAge());`,
+                            `        System.out.println("Salary: " + emp.getSalary());`,
+                            "        // Invalid operation",
+                            "        try {",
+                            "            emp.setAge(15); // Throws exception",
+                            "        } catch (IllegalArgumentException e) {",
+                            `            System.out.println("Error: " + e.getMessage());`,
+                            "        }",
+                            "    }",
+                            "}"
+                        ]
+                    },{
+                        topicName: "Output:",
+                        topicExample: [
+                            "Name: Alice",
+                            "Age: 30",
+                            "Salary: 50000.0",
+                            "Error: Age must be between 18 and 65"
                         ]
                     }
                 ]

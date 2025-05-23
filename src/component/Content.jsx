@@ -15,7 +15,7 @@ const Content = () => {
         }, {
             topicName: "OOPS",
             subTopicList: ["OOPs & Features", "Class", "Constructor", "Constructor Calling Chain",
-                "Method", "Object", "Encapsulation"]
+                "Method", "Object"]
         }, {
             topicName: "Inheritance",
             subTopicList: ["Inheritance", "Single Inheritance", "Multi-level Inheritance", "Multiple Inheritance",
@@ -26,6 +26,9 @@ const Content = () => {
         }, {
             topicName: "Polymorphism",
             subTopicList: ["Polymorphism", "Run-Time Polymorphism","Compile-Time Polymorphism"]
+        }, {
+            topicName: "Encapsulation",
+            subTopicList: ["Encapsulation"]
         }, {
             topicName: "String",
             subTopicList: ["String", "String Buffer", "String Builder"]
